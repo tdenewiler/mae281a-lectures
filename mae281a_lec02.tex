@@ -19,11 +19,25 @@
 \section{Limit Cycles Recap}
 Last lecture we studied linear and nonlinear limit cycles. An example of a linear limit cycle is a  harmonic oscillator given by
 $$\ddot{x} + x = 0$$
-and the state space is shown in Figure ??.
+and the state space is shown in Figure \ref{fig:02secondorder}.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=.4\textwidth]{images/01secondorder}
+	\caption{Limit cycle for second order harmonic oscillator.}
+	\label{fig:02secondorder}
+\end{figure}
 
 An example of a nonlinear limit cycle is a Van der Pol oscillator given by
 $$\ddot{x} + (x^2-1)\ddot{x} + x = 0$$
-and the state space is shown in Figure ??. Note that there is positive damping for $|x|>1$ and negative damping for $|x|<1$.
+and the state space is shown in Figure \ref{fig:02vdplc}. Note that there is positive damping for $|x|>1$ and negative damping for $|x|<1$.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=.4\textwidth]{images/02vdplc}
+	\caption{Limit cycle for Van der Pol oscillator.}
+	\label{fig:02vdplc}
+\end{figure}
 
 The harmonic oscillator has a period of $2\pi$ and the Van der Pol oscillator has a base harmonic accompanied by lower frequencies and can be modeled using a Fourier series.
 
@@ -85,9 +99,57 @@ we have to look at the eigenvalues and eigenvectors of $A$. There are three poss
 \left[\begin{array}{c c} \lambda & k \\ 0 & \lambda \end{array}\right]
 \end{align*}
 
-In the first case we have $\lambda_1\neq\lambda_2\neq0$. Figure ?? shows the stable mode for $\lambda_1, \lambda_2<0$, Figure ?? shows the unstable mode for $\lambda_1, \lambda_2>0$ and Figure ?? shows the saddle point for $\lambda_1>0$ and $\lambda_2<0$.
+In the first case we have $\lambda_1\neq\lambda_2\neq0$. Figure \ref{fig:02stable1} shows the stable mode for $\lambda_1, \lambda_2<0$, Figure \ref{fig:02unstable1} shows the unstable mode for $\lambda_1, \lambda_2>0$ and Figure \ref{fig:02saddle1} shows the saddle point for $\lambda_1>0$ and $\lambda_2<0$.
 
-In the second case we have $\lambda_{1,2}=\alpha\pm\ j\beta$. Figure ?? shows the stable mode for $\alpha<0$, Figure ?? shows the unstable mode for $\alpha>0$ and Figure ?? shows the oscillatory behavior that occurs when $\alpha=0$.
+\begin{figure}[ht!]
+  \centering
+  \subfloat[$\lambda_1,\lambda_2<0$, stable mode.]{
+    \label{fig:02stable1}\includegraphics[width=0.35\textwidth]{images/02stable1}
+  } \hfill
+  \subfloat[$\lambda_1,\lambda_2>0$, unstable mode.]{
+    \label{fig:02unstable1}\includegraphics[width=0.35\textwidth]{images/02unstable1}
+  } \\
+  \subfloat[$\lambda_1>0,\lambda_2<0$, saddle point.]{
+    \label{fig:02saddle1}\includegraphics[width=0.35\textwidth]{images/02saddle1}
+  }
+  \caption{Case 1: $\lambda_1\neq\lambda_2\neq0$.}
+  \label{fig:02case1}
+\end{figure}
 
-In the third case we have $\lambda_1=\lambda_2=\lambda\neq0$ and we can have $k=0$ or $k=1$. If $k=0$ then there are two independent eigenvectors and Figure ?? shows the stable mode for $\lambda<0$ and Figure ?? shows the unstable mode for $\lambda>0$. When $k=1$ there is only a single independent eigenvector and troublesome behavior exists. Figure ?? shows what happens when $\lambda<0$ and Figure ?? shows what happens when $\lambda>0$.
+In the second case we have $\lambda_{1,2}=\alpha\pm\ j\beta$. Figure \ref{fig:02stable2} shows the stable mode for $\alpha<0$, Figure \ref{fig:02unstable2} shows the unstable mode for $\alpha>0$ and Figure \ref{fig:02center2} shows the oscillatory behavior that occurs when $\alpha=0$.
+
+\begin{figure}[ht!]
+  \centering
+  \subfloat[$\alpha<0$, stable mode.]{
+    \label{fig:02stable2}\includegraphics[width=0.35\textwidth]{images/02stable2}
+  } \hfill
+  \subfloat[$\alpha>0$, unstable mode.]{
+    \label{fig:02unstable2}\includegraphics[width=0.35\textwidth]{images/02unstable2}
+  } \\
+  \subfloat[$\alpha=0$, center point.]{
+    \label{fig:02center2}\includegraphics[width=0.35\textwidth]{images/02center2}
+  }
+  \caption{Case 2: $\lambda_{1,2} = \alpha\pm j\beta$.}
+  \label{fig:02case2}
+\end{figure}
+
+In the third case we have $\lambda_1=\lambda_2=\lambda\neq0$ and we can have $k=0$ or $k=1$. If $k=0$ then there are two independent eigenvectors and Figure \ref{fig:02lltwo3} shows the stable mode for $\lambda<0$ and Figure \ref{fig:02lgtwo3} shows the unstable mode for $\lambda>0$. When $k=1$ there is only a single independent eigenvector and troublesome behavior exists. Figure \ref{fig:02llone3} shows what happens when $\lambda<0$ and Figure \ref{fig:02lgone3} shows what happens when $\lambda>0$.
+
+\begin{figure}[ht!]
+  \centering
+  \subfloat[$\lambda<0$, two independent eigenvectors.]{
+    \label{fig:02lltwo3}\includegraphics[width=0.35\textwidth]{images/02lltwo3}
+  } \hfill
+  \subfloat[$\lambda>0$, two independent eigenvectors.]{
+    \label{fig:02lgtwo3}\includegraphics[width=0.35\textwidth]{images/02lgtwo3}
+  } \\
+  \subfloat[$\lambda<0$, one independent eigenvector.]{
+    \label{fig:02llone3}\includegraphics[width=0.35\textwidth]{images/02llone3}
+  } \hfill
+  \subfloat[$\lambda>0$, one independent eigenvector.]{
+    \label{fig:02lgone3}\includegraphics[width=0.35\textwidth]{images/02lgone3}
+  }
+  \caption{Case 3: $\lambda_1=\lambda_2=\lambda\neq0$.}
+  \label{fig:02case2}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
