@@ -5,8 +5,10 @@
 
 \lectureseries[\course]{\course}
 
+\renewcommand{\scribe}{Thomas Denewiler, Nick Morozovsky}
 \auth[\lecAuth]{Lecturer: \lecAuth\\ Scribe: \scribe}
-\date{January 5, 2010}
+\renewcommand{\scribe}{Thomas Denewiler}
+\date{January 21, 2010}
 
 \setaddress
 
@@ -16,7 +18,72 @@
 
 \lecture{Course Introduction}
 
-\section{Introduction}
+\section{Sensitivity Equations}
+This corresponds to Chapter 3.3 of Khalil. We now want to look at systems where
+$$\dot{x} = f(t,x,\lambda)$$
+By sensitivity we mean the derivative. We are interested in how uncertainties or changes in a system's properties (such as mass, length, etc.) will affect the system behavior.
 
+We want
+$$x_\lambda = \frac{\partial x}{\partial\lambda}$$
+Consider the nominal case where $\lambda=\lambda_0$ and the nominal system $\dot{x}=f(t,x,\lambda_0)$. Assuming that there exists a unique solution over the range $[t_0,t_1]$ this leads to
+\begin{align*}
+x(t,\lambda) &= x_0 + \int_{t_0}^t f(x,x(s,\lambda),\lambda)ds \\
+x_\lambda(t,\lambda) &= \int_{t_0}^t \left[ \frac{\partial f}{\partial x}(s,x(s,\lambda),\lambda)x_\lambda(s,\lambda) + \frac{\partial f}{\partial\lambda}(s,x(s,\lambda),\lambda) \right]ds
+\end{align*}
+where
+\begin{align*}
+x_\lambda(t,\lambda) = \frac{\partial x(t,\lambda)}{\partial\lambda}, \qquad \frac{\partial x_0}{\partial\lambda} = 0
+\end{align*}
+Differentiating with respect to time it can be seen that $x_\lambda(t,\lambda)$ satisfies
+$$\frac{\partial}{\partial t}x_\lambda(t,\lambda) = A(t,\lambda)x_\lambda(t,\lambda) + B(t,\lambda), \qquad x_\lambda(t_0,\lambda) = 0$$
+where
+$$A(t,\lambda) = \left.\frac{\partial f(t,x,\lambda)}{\partial x}\right|_{x=x(t,\lambda)}, \qquad B(t,\lambda) = \left.\frac{\partial f(t,x,\lambda)}{\partial\lambda}\right|_{x=x(t,\lambda)}$$
 
+The \textit{sensitivity equation} is denoted by $S(t) = x_\lambda(t,\lambda)$ and is the unique solution of the equation
+$$\dot{S}(t) = A(t,\lambda_0)S(t) + B(t,\lambda_0), \qquad S(t_0) = 0$$
+
+We need a solution of $\dot{x}=f(t,x,\lambda_0)$ to compute $S(t)$ with $S(t_0)=0$. To get there we take a Taylor's series expansion about $\lambda_0$ and find
+$$x(t,\lambda) \approx x(t,\lambda_0) + S(t)(\lambda-\lambda_0)$$
+This is only a valid approximation over a small range of $\lambda-\lambda_0)$.
+
+\section{Comparision Principle}
+This corresponds to Chapter 3.4 of Khalil. We are looking at differential inequalities such that
+$$\dot{v}\leq f(t,v)$$
+where $v$ is a scalar and $f$ is scalar-valued (not a vector field). Now consider the differential equation
+$$\dot{u} = f(t,u)$$
+using the same function $f$ and recall Gr\"onwalls Lemma in \S\ref{sec:04gronwall} which showed that
+$$y(t) \leq \lambda(t) + \int_a^t\mu(s)y(s)ds$$
+Then we have the following lemma.
+
+\begin{lemma}
+If $v(t_0)\leq u(t_0)$ then $v(t)\leq u(t)$.
+\end{lemma}
+
+\begin{example}
+Let
+\begin{align*}
+\dot{x} &= -x(1+x^2+y^2) \\
+\dot{y} &= -y(1-x^2)+\sin(t) \\
+r &= \sqrt{x^2+y^2} \\
+v &= r^2
+\end{align*}
+This leads to
+\begin{align*}
+\dot{v} &= \frac{d}{dt}(x^2+y^2) \\
+&= 2(x\dot{x}+2y\dot{y}) \\
+&= 2(-x^2-x^4-x^2y^2-y^2+x^2y^2+y\sin(t)) \\
+&= 2(-v-r^4\cos^4\theta+r\sin\theta\sin t)
+\end{align*}
+Then we get
+\begin{align*}
+\dot{r} &= -r-r^3\cos^4\theta+\cos\theta\sin t \\
+\Rightarrow \dot{r} &\leq -r+1 \\
+\Rightarrow r(t) &\leq e^{-t}r_0 + \int_0^t e^{-(t-\tau)}1d\tau \\
+\Rightarrow r(t) &\leq e^{-t}r_0 + 1 - \underbrace{e^{-t}}_{\to0} \\
+&\leq e^{-t}r_0 + 1 \\
+\Rightarrow \sqrt{x^2(t)+y^2(t)} &\leq e^{-t}\sqrt{x_0^2+y_0^2} + 1
+\end{align*}
+This shows that the energy of the system decays to within the unit circle.
+$\lozenge$
+\end{example}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
