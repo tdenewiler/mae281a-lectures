@@ -24,17 +24,24 @@ The equilibrium point $x=0$ of $\dot{x}=f(x)$ is:
 \begin{align*}
 |x(0)| < \delta \Rightarrow |x(t)| < \epsilon, \forall t\geq0,
 \end{align*}
-This means that the solution is bounded for any initial condition.
+This means that the solution is bounded for any initial condition as in Figure \ref{fig:07stableEqPoint}.
 \item \textit{unstable} if the equilibrium point is not stable,
 \item \textit{attractive} if there exists $\delta>0$ such that if $|x(0)|<\delta$ then
 \begin{align*}
 \lim_{t\to\infty}x(t) = 0,
 \end{align*}
-Attractiveness does not concern the rate of convergence or even stability of the system to the equilibrium point. Note that it is difficult to describe a real physical system that is attractive but not stable, however mathtematically it must be considered. See Figure ?? for an example of a system that is attractive but not stable.
+Attractiveness does not concern the rate of convergence or even stability of the system to the equilibrium point. Note that it is difficult to describe a real physical system that is attractive but not stable, however mathtematically it must be considered. See Figure \ref{fig:07attractiveNotStable} for an example of a system that is attractive but not stable.
 \item \textit{asymptotically stable} (a.s) if the equilibrium point is stable and attractive,
 \item \textit{globally asymptotically stable} (g.a.s.) if the equilibrium point is a.s. $\forall x_0\in\mathbb{R}^n$.
 \end{itemize}
 \end{definition}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=.4\textwidth]{images/07stableEqPoint}
+	\caption{Stable equilibrium point.}
+	\label{fig:07stableEqPoint}
+\end{figure}
 
 \begin{definition}
 Consider the system $\dot{x}=f(x)$ and a scalar valued $V(x)$. Then
@@ -43,6 +50,13 @@ Consider the system $\dot{x}=f(x)$ and a scalar valued $V(x)$. Then
 \end{align*}
 where $L$ is the Lie or directional derivative.
 \end{definition}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=.4\textwidth]{images/07attractiveNotStable}
+	\caption{Stable equilibrium point.}
+	\label{fig:07attractiveNotStable}
+\end{figure}
 
 \begin{theorem}{Lyapunov Stability}
 Let $x=0$ be an equilibrium point of $\dot{x}=f(x)$ and let $V:D\to\mathbb{R}$, $D\in\mathbb{R}^n$.

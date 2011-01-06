@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="08levelSets.svg"
+   inkscape:export-filename="/home/thomas/school/mae281a/lectures/images/08verticalEq.png"
+   inkscape:export-xdpi="100"
+   inkscape:export-ydpi="100">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         id="path3604"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="242.3585"
+     inkscape:cy="690.4673"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1149"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 339.41126,355.35693 c 0,0 25.7075,-22.34664 25.25381,-37.37565 -0.55071,-18.2429 -15.28798,-40.71433 -33.33503,-43.43656 -33.67335,-5.07932 -71.1136,27.30922 -83.33759,59.09393 -12.75589,33.16774 -4.5553,81.89636 23.23351,104.04571 25.27805,20.14812 68.38071,14.57183 96.97464,-0.50508 37.67531,-19.8653 62.44659,-63.72439 72.73099,-105.05586 6.91824,-27.80338 4.75197,-60.85761 -10.10153,-85.35789 -16.96585,-27.98452 -49.29841,-47.6306 -81.10807,-55.31945 -36.35012,-8.78634 -78.31212,-3.66424 -111.32599,13.90319 -38.44948,20.45984 -72.03495,57.18912 -85.86297,98.48988 -16.61187,49.6154 -19.27046,113.9759 11.11168,156.57364 43.67041,61.22876 132.41153,90.58189 207.58635,88.38835 65.03492,-1.89767 132.17947,-37.66734 174.82202,-86.80749 33.95332,-39.12691 55.17754,-96.13474 48.81908,-147.5479 -7.8324,-63.33119 -51.48602,-123.42342 -102.60226,-161.62441 -44.27252,-33.08643 -104.17255,-46.97573 -159.42464,-45.57071 -75.59009,1.92219 -161.07514,19.99734 -214.65741,73.34991 -54.292855,54.06011 -79.134619,140.66372 -75.256367,217.18279 3.176034,62.6641 31.602003,129.94734 79.296977,170.71578 84.79005,72.47636 211.96721,111.85403 321.73358,92.0167 77.85447,-14.0701 147.66803,-74.76219 190.91884,-141.0091 48.87673,-74.86408 59.09392,-261.6295 59.09392,-261.6295"
+       id="path4280"
+       sodipodi:nodetypes="caaaaasaaaaaaaaaaaaaaaa" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 563.36002,695.21933 735.71432,290.21932"
+       id="path4282" />
+    <path
+       id="path4284"
+       d="m 648.93222,492.74753 203.10496,86.14894"
+       style="fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSerif;-inkscape-font-specification:AlArabiya Italic"
+       x="860.64996"
+       y="578.60065"
+       id="text4470"><tspan
+         sodipodi:role="line"
+         id="tspan4472"
+         x="860.64996"
+         y="578.60065">∂V</tspan></text>
+    <text
+       id="text4474"
+       y="616.98645"
+       x="860.64996"
+       style="font-size:40px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSerif;-inkscape-font-specification:AlArabiya Italic"
+       xml:space="preserve"><tspan
+         y="616.98645"
+         x="860.64996"
+         id="tspan4476"
+         sodipodi:role="line">∂x</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 862.79654,583.02005 40.15357,0"
+       id="path4478" />
+  </g>
+</svg>

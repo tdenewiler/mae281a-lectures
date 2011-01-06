@@ -6,7 +6,7 @@
 \lectureseries[\course]{\course}
 
 \auth[\lecAuth]{Lecturer: \lecAuth\\ Scribe: \scribe}
-\date{January 5, 2010}
+\date{February 11, 2010}
 
 \setaddress
 
@@ -14,9 +14,109 @@
 \setcounter{lecture}{11}
 \setcounter{chapter}{11}
 
-\lecture{Course Introduction}
+\lecture{Linearization \& Perturbation Method}
 
-\section{Introduction}
+\section{Linearization}
+\begin{theorem}
+Consider $\dot{x}=f(x)$ with $f(0)=0$ and let
+$$A = \frac{\partial f(0)}{\partial x}.$$
+\begin{enumerate}
+\item $x=0$ is asymptotically stable if $A$ is Hurwitz.
+\item $x=0$ is unstable if there exists $\lambda_i(A)$ such that $\text{Re}(\lambda_i) > 0$.
+\end{enumerate}
+\end{theorem}
 
+\begin{example}
+Let the system be given by
+\begin{align*}
+\dot{x}_1 &= x_2-x_1^3 \\
+\dot{x}_2 &= 0-x_2^3.
+\end{align*}
+After linearizing the system is
+\begin{align*}
+\dot{x}_1 &= x_2 \\
+\dot{x}_2 &= 0.
+\end{align*}
+This can be rewritten with the system matrix
+\begin{align*}
+A = \left[\begin{array}{c c} 0 & 1 \\ 0 & 0 \end{array}\right].
+\end{align*}
+The eigenvalues are $\lambda(A)=(0,0)$. This gives a Jordan block of order $2$ so we can't say it is asymptotically stable but we can't say it is unstable either. It turns out that the system is a cascade of asymptotically stable equations which means that $\dot{x}_2$ is asymptotically stable so $\dot{x}_1$ is asymptotically stable as well.
+$\lozenge$
+\end{example}
+
+Other inconclusive situations include:
+\begin{align*}
+A &= \left[\begin{array}{c c} 0 & 1 \\ -1 & 0 \end{array}\right] \Rightarrow \lambda(A)=\pm i \\
+A &= \left[\begin{array}{c c} 0 & 0 \\ 0 & -1 \end{array}\right] \\
+A &= \left[\begin{array}{c c} 0 & 0 \\ 0 & 0 \end{array}\right]
+\end{align*}
+Nonlinear analysis is necessary to determine stability of these systems.
+
+\section{Linear Time Variant Systems and Linearization}
+The system $\dot{x}(t) = A(t)x(t)$ can also be written as
+$$x(t) = \Phi(t,t_0)x(t_0)$$
+where $\Phi$ is the state transition matrix.
+
+\begin{definition}
+The equilibrium point $x=0$ is \textit{exponentially stable} if
+$$|\Phi(t,t_0)| \leq Ke^{-\gamma(t-t_0)} \forall t\geq t_0$$
+with $K>0$ because as an upper bound and $\gamma>0$ because we are looking for stable systems.
+\end{definition}
+
+Counter examples that are asymptotically stable but not exponentially stable are
+\begin{align*}
+\dot{x} &= -x^3 \\
+\dot{x} &= -\frac{x}{1+t}.
+\end{align*}
+The main point to take away from this is that we cannot determine stability by analyzing eigenvalues for time variant systems.
+
+\begin{example}
+Let the system be
+$$A(t) = \left[\begin{array}{c c} -1+1.5\cos^2t & 1-1.5\sin t\cos t \\ -1-1.5\sin t\cos t & -1+1.5\sin^2t \end{array}\right].$$
+The eigenvalues are $\lambda(A(t)) = \{-0.25\pm 0.25\sqrt{7}j\}$. These eigenvalues are stable and constant. However, the system written as
+$$\Phi(t,0) = \left[\begin{array}{c c} e^{0.5t}\cos t & e^{-t}\sin t \\ -e^{0.5t}\sin t & e^{-t}\cos t \end{array}\right]$$
+is not stable.
+
+It turns out that the eigenvalues are the average. The mean is like the first term in the elements of $A$ and the second term is like the variance. The amplitude of the variance is large compared to the mean which is why the system turns out to be unstable. If the amplitude of the variance were smaller ($<0.5$) then the system would be stable.
+$\lozenge$
+\end{example}
+
+\begin{theorem}
+\begin{align*}
+-\dot{P} &= PA + A^TP + Q \\
+V &= x^TP(t)x
+\end{align*}
+\end{theorem}
+
+\begin{theorem}
+$$A(t) = \left.\frac{\partial f(t,x)}{\partial x}\right|_{x=0}$$
+\end{theorem}
+
+\section{Perturbation Method}
+Perturbation methods are a generalization of the sensitivity functions. For the system given by
+\begin{align}
+\label{eq:10system}
+\dot{x} = f(t,x,\epsilon), \qquad x(t_0) = \eta(\epsilon)
+\end{align}
+we can denote by $x_0(t)$ the solution of
+$$\dot{x} = f(t,x,0), \qquad x(t_0) = \eta(0).$$
+Then we can take a Taylor series expansion in $\epsilon$ only because time is not small. This leads to
+\begin{align}
+\label{eq:10taylor}
+\begin{split}
+x(t,\epsilon) &= x_0(t) + \sum_{k=1}^{N-1}\epsilon^kx_k(t) + \epsilon^Nx_R(t,\epsilon) \\
+\eta(\epsilon) &= \eta(0) + \sum_{k=1}^{N-1}\epsilon^k\eta_k + \epsilon^N\eta_k(\epsilon) \\
+x_k(0) &= \eta_k
+\end{split}
+\end{align}
+
+If we substitute (\ref{eq:10taylor}) into (\ref{eq:10system}) then the left hand side of $\dot{x}$ is simple but the right hand side $f(t,x)$ is complicated. The next step is to do a Taylor series expansion of $f$ in $x$ and evaluate it at the nominal point $x_0$. Then collect like powers of $\epsilon$ resulting in
+\begin{align*}
+\epsilon^0: \dot{x}_0 &= f(t,x_0,0) \\
+\epsilon^1: \dot{x}_1 &= \underbrace{\frac{\partial f}{\partial x}(t,x_0(t),0)}_{A(t)}x_1 + \underbrace{\frac{\partial f}{\partial\epsilon}(t,x_0,0)}_{B(t)} \\
+&\vdots \\
+\epsilon^k: \dot{x}_k &= A(t)x_k + g_k(t,x_0(t),\ldots,x_{k-1}(t))
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
