@@ -1,5 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \mainmatter%
 \setcounter{page}{1}
 
@@ -32,9 +30,12 @@ Interesting cases of this type arise when there is a high-dimensional state vect
 y &= h(t,x,u)
 \end{align*}
 
-In MAE 281B control design is studied in order to find $u(t,x)$. Note that $u(x)$ is considered a feedback control law while $u(t,x)$ is considered to have a feedforward element as well as feedback. In MAE 281A we will be studying analysis of nonlinear systems without any control or where the control is considered to be an undesirable disturbance to the system.
+In MAE 281B control design is studied in order to find $u(t,x)$.
+Note that $u(x)$ is considered a feedback control law while $u(t,x)$ is considered to have a feedforward element as well as feedback.
+In MAE 281A we will be studying analysis of nonlinear systems without any control or where the control is considered to be an undesirable disturbance to the system.
 
-For terminology Khalil considers $\dot{x}=f(t,x)$ to be a \textit{non-autonomous} system but this can also be thought of as a \textit{time-varying} (TV) system analogous to what is found in the linear control literature. When $\dot{x}=f(x)$ Khalil calls this an \textit{autonomous} system whereas the linear control literature refers to it as \textit{time-invariant} (TI).
+For terminology Khalil considers $\dot{x}=f(t,x)$ to be a \textit{non-autonomous} system but this can also be thought of as a \textit{time-varying} (TV) system analogous to what is found in the linear control literature.
+When $\dot{x}=f(x)$ Khalil calls this an \textit{autonomous} system whereas the linear control literature refers to it as \textit{time-invariant} (TI).
 
 \subsection{Time Invariant Systems}
 Time invariant systems are described by the relationship
@@ -52,11 +53,15 @@ Equilibria: $\text{null}(A)$ or $\text{kernel}(A)$.
 \end{definition}
 
 \section{Multiple Isolated Equilibria}
-In the linear case $\dot{x}=Ax$ we have $\text{null}(A)$ is the equilibria manifold or the continuum of equilibria. In the nonlinear case $\dot{x}=f(x)$ we find multiple isolated equilibria.
+In the linear case $\dot{x}=Ax$ we have $\text{null}(A)$ is the equilibria manifold or the continuum of equilibria.
+In the nonlinear case $\dot{x}=f(x)$ we find multiple isolated equilibria.
 \begin{example}
 Let
 $$\dot{x} = x-x^3 = x(1-x^2)$$
-The equilibria are found when $f(x)=0$ which in this case leads to $x=0,\pm1$. Figure~\ref{fig:01roots} shows where the equilibria lie on a line and Figure~\ref{fig:01traj} shows how the solution depends on the initial conditions. The highlighted initial conditions are when $x_0\gg1$, $x_0\ll1$, $0<x_0<1$ and $-1<x_0<0$. Later in this course we will see that the $\pm1$ equilibria are attracting and the $0$ equilibrium is repellant and that attracting equilibria are stable while repellant equilibria are unstable.
+The equilibria are found when $f(x)=0$ which in this case leads to $x=0,\pm1$.
+Figure~\ref{fig:01roots} shows where the equilibria lie on a line and Figure~\ref{fig:01traj} shows how the solution depends on the initial conditions.
+The highlighted initial conditions are when $x_0\gg1$, $x_0\ll1$, $0<x_0<1$ and $-1<x_0<0$.
+Later in this course we will see that the $\pm1$ equilibria are attracting and the $0$ equilibrium is repellant and that attracting equilibria are stable while repellant equilibria are unstable.
 $\lozenge$
 \end{example}
 
@@ -85,7 +90,9 @@ $\lozenge$
 \begin{example}
 A nonlinear unstable system is given by
 $$\dot{x} = x^3 \Rightarrow \frac{dx}{dt}=x^3 \Rightarrow \int\frac{dx}{x^3} = \int dt \Rightarrow x(t) = \frac{x_0}{\sqrt{1-2x_0^2t}}$$
-This solution blows up as $t\to\frac{1}{2x_0^2}$ because then there is a division by zero, see Figure~\ref{fig:01blowup}. Notice that for smaller initial conditions the system blows up later than for larger initial conditions. The rule of thumb is to pay special attention to instabilities larger than linear in growth.
+This solution blows up as $t\to\frac{1}{2x_0^2}$ because then there is a division by zero, see Figure~\ref{fig:01blowup}.
+Notice that for smaller initial conditions the system blows up later than for larger initial conditions.
+The rule of thumb is to pay special attention to instabilities larger than linear in growth.
 $\lozenge$
 \end{example}
 
@@ -117,4 +124,3 @@ $$\ddot{x} + (x^2-1)\dot{x} + x = 0$$
 Here the position term and the viscosity term tend to balance each other out so that as one increases the other decreases and vice-versa.
 $\lozenge$
 \end{example}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

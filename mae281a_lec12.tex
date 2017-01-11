@@ -1,5 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \mainmatter%
 \setcounter{page}{1}
 
@@ -41,7 +39,9 @@ This can be rewritten with the system matrix
 \begin{align*}
 A = \left[\begin{array}{c c} 0 & 1 \\ 0 & 0 \end{array}\right].
 \end{align*}
-The eigenvalues are $\lambda(A)=(0,0)$. This gives a Jordan block of order $2$ so we can't say it is asymptotically stable but we can't say it is unstable either. It turns out that the system is a cascade of asymptotically stable equations which means that $\dot{x}_2$ is asymptotically stable so $\dot{x}_1$ is asymptotically stable as well.
+The eigenvalues are $\lambda(A)=(0,0)$.
+This gives a Jordan block of order $2$ so we can't say it is asymptotically stable but we can't say it is unstable either.
+It turns out that the system is a cascade of asymptotically stable equations which means that $\dot{x}_2$ is asymptotically stable so $\dot{x}_1$ is asymptotically stable as well.
 $\lozenge$
 \end{example}
 
@@ -74,11 +74,16 @@ The main point to take away from this is that we cannot determine stability by a
 \begin{example}
 Let the system be
 $$A(t) = \left[\begin{array}{c c} -1+1.5\cos^2t & 1-1.5\sin t\cos t \\ -1-1.5\sin t\cos t & -1+1.5\sin^2t \end{array}\right].$$
-The eigenvalues are $\lambda(A (t)) = \{-0.25\pm{} 0.25\sqrt{7}j\}$. These eigenvalues are stable and constant. However, the system written as
+The eigenvalues are $\lambda(A (t)) = \{-0.25\pm{} 0.25\sqrt{7}j\}$.
+These eigenvalues are stable and constant.
+However, the system written as
 $$\Phi(t,0) = \left[\begin{array}{c c} e^{0.5t}\cos t & e^{-t}\sin t \\ -e^{0.5t}\sin t & e^{-t}\cos t \end{array}\right]$$
 is not stable.
 
-It turns out that the eigenvalues are the average. The mean is like the first term in the elements of $A$ and the second term is like the variance. The amplitude of the variance is large compared to the mean which is why the system turns out to be unstable. If the amplitude of the variance were smaller ($<0.5$) then the system would be stable.
+It turns out that the eigenvalues are the average.
+The mean is like the first term in the elements of $A$ and the second term is like the variance.
+The amplitude of the variance is large compared to the mean which is why the system turns out to be unstable.
+If the amplitude of the variance were smaller ($<0.5$) then the system would be stable.
 $\lozenge$
 \end{example}
 
@@ -94,14 +99,16 @@ $$A(t) = \left.\frac{\partial f(t,x)}{\partial x}\right|_{x=0}$$
 \end{theorem}
 
 \section{Perturbation Method}
-Perturbation methods are a generalization of the sensitivity functions. For the system given by
+Perturbation methods are a generalization of the sensitivity functions.
+For the system given by
 \begin{align}
 \label{eq:10system}
 \dot{x} = f(t,x,\epsilon), \qquad x(t_0) = \eta(\epsilon)
 \end{align}
 we can denote by $x_0(t)$ the solution of
 $$\dot{x} = f(t,x,0), \qquad x(t_0) = \eta(0).$$
-Then we can take a Taylor series expansion in $\epsilon$ only because time is not small. This leads to
+Then we can take a Taylor series expansion in $\epsilon$ only because time is not small.
+This leads to
 \begin{align}
 \label{eq:10taylor}
 \begin{split}
@@ -111,12 +118,12 @@ x_k(0) &= \eta_k
 \end{split}
 \end{align}
 
-If we substitute (\ref{eq:10taylor}) into (\ref{eq:10system}) then the left hand side of $\dot{x}$ is simple but the right hand side $f(t,x)$ is complicated. The next step is to do a Taylor series expansion of $f$ in $x$ and evaluate it at the nominal point $x_0$. Then collect like powers of $\epsilon$ resulting in
+If we substitute (\ref{eq:10taylor}) into (\ref{eq:10system}) then the left hand side of $\dot{x}$ is simple but the right hand side $f(t,x)$ is complicated.
+The next step is to do a Taylor series expansion of $f$ in $x$ and evaluate it at the nominal point $x_0$.
+Then collect like powers of $\epsilon$ resulting in
 \begin{align*}
 \epsilon^0: \dot{x}_0 &= f(t,x_0,0) \\
 \epsilon^1: \dot{x}_1 &= \underbrace{\frac{\partial f}{\partial x}(t,x_0(t),0)}_{A(t)}x_1 + \underbrace{\frac{\partial f}{\partial\epsilon}(t,x_0,0)}_{B(t)} \\
 &\vdots \\
 \epsilon^k: \dot{x}_k &= A(t)x_k + g_k(t,x_0(t),\ldots,x_{k-1}(t))
 \end{align*}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,5 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \mainmatter%
 \setcounter{page}{1}
 
@@ -22,22 +20,33 @@ Invariance concerns a function, $\dot{x}=f(x)$, converging to a set and then sta
 \begin{example}
 Using the dynamics of a pendulum previously described in Example~\ref{ex:03pendulum} consider the Lyapunov function with derivative
 $$\dot{V} = \frac{d}{dt}\left\{\frac{g}{l}\left(1-\cos x_1\right) + \frac{1}{2}x_2^2\right\} = -\frac{k}{m}x_2^2$$
-which is negative semidefinite. This does not result in asymptotic stability because of the negative semidefinite character of the derivative. However, we do get $\dot{V}=0$ on $x_2=0$.
+which is negative semidefinite.
+This does not result in asymptotic stability because of the negative semidefinite character of the derivative.
+However, we do get $\dot{V}=0$ on $x_2=0$.
 
-Suppose that $x_2(t)\triangleq0$. This would lead to
+Suppose that $x_2(t)\triangleq0$.
+This would lead to
 $$\dot{x}_2 = -\frac{g}{l}\sin x_1 - \frac{k}{m}x_2 \Rightarrow \sin x_1(t) \triangleq 0.$$
 Thus $\dot{V}$ can be maintained only at the origin and $x(t)\to0$.
 $\lozenge$
 \end{example}
 
 \begin{theorem}{Barbashin-Krasovskii}
-Suppose $V$ is positive definite and $\dot{V}\leq0 \forall x\in\mathcal{D}$. Let $\mathcal{S}=\{x\in\mathcal{D} | \dot{V} = 0\}$ and suppose that no solution can stay forever in $\mathcal{S}$ other than $x(t)\triangleq0$. Then it follows that $x=0$ is asymptotically stable.
+Suppose $V$ is positive definite and $\dot{V}\leq0 \forall x\in\mathcal{D}$.
+Let $\mathcal{S}=\{x\in\mathcal{D} | \dot{V} = 0\}$ and suppose that no solution can stay forever in $\mathcal{S}$ other than $x(t)\triangleq0$.
+Then it follows that $x=0$ is asymptotically stable.
 \end{theorem}
 
 \begin{theorem}{LaSalle's Invariance Principle}
-Let $\Omega$ be a compact positively invariant set of $\dot{x}=f(x)$. Let $V:\Omega\to\mathbb{R}$ be $\mathcal{C}^1$ such that $\dot{V}\leq0 \forall x \in \Omega$. Let the set $\mathcal{E}=\{x\in\Omega | \dot{V}=0\}$ and let $\mathcal{M}$ be the largest invariant set contained in $\mathcal{E}$. Then $x(0)\in\Omega \Rightarrow x(t)\to\mathcal{M}$ as $t\to\infty$.
+Let $\Omega$ be a compact positively invariant set of $\dot{x}=f(x)$.
+Let $V:\Omega\to\mathbb{R}$ be $\mathcal{C}^1$ such that $\dot{V}\leq0 \forall x \in \Omega$.
+Let the set $\mathcal{E}=\{x\in\Omega | \dot{V}=0\}$ and let $\mathcal{M}$ be the largest invariant set contained in $\mathcal{E}$.
+Then $x(0)\in\Omega \Rightarrow x(t)\to\mathcal{M}$ as $t\to\infty$.
 \end{theorem}
-Note that all Lyapunov level sets are positive invariant sets. Also, there are no restriction on $V>0$. However, it is \textit{very} rare to see that in practice. Additionally, note that not all points in $\mathcal{M}$ are attractors but \textit{some} points are attractors.
+Note that all Lyapunov level sets are positive invariant sets.
+Also, there are no restriction on $V>0$.
+However, it is \textit{very} rare to see that in practice.
+Additionally, note that not all points in $\mathcal{M}$ are attractors but \textit{some} points are attractors.
 
 \begin{example}
 Let the system dynamics be given by
@@ -50,7 +59,9 @@ Consider the Lyapunov function and derivative
 V &= x^2 + 8y^2 \\
 \dot{V} &= -2x^2.
 \end{align*}
-This gives $\mathcal{E}=\{x=0\}$ as the equilibrium set. Since $x=0$ is an equilibrium set we have $\mathcal{M}=\mathcal{E}$. By LaSalle's theorem
+This gives $\mathcal{E}=\{x=0\}$ as the equilibrium set.
+Since $x=0$ is an equilibrium set we have $\mathcal{M}=\mathcal{E}$.
+By LaSalle's theorem
 \begin{align*}
 \left[\begin{array}{c} x(t) \\ y(t) \end{array}\right] \to\mathcal{M} = \{x=0\}.
 \end{align*}
@@ -69,23 +80,28 @@ Consider the Lyapunov function and derivative
 V &= \tfrac{1}{2}(x^2+y^2+z^2) \\
 \dot{V} &= x\dot{x} + y\dot{y} + z\dot{z} = -x^2.
 \end{align*}
-Again we have that the equilibrium set is $\mathcal{E}=\{x=0\}$. The equilibria are located at $x=0$ and $y=0$ or $y=1$. This gives
+Again we have that the equilibrium set is $\mathcal{E}=\{x=0\}$.
+The equilibria are located at $x=0$ and $y=0$ or $y=1$.
+This gives
 $$\mathcal{M} = \{x=0,y=0\} \cup \{x=0,y=1\}.$$
 $\lozenge$
 \end{example}
 
 \section{Linear Systems and Linearization}
-Recall from linear system theory that for the system $\dot{x}=Ax$ a solution for $x$ takes the form $x(t)=e^{At}x(0)$. Simple substitution shows that $x(t)$ is indeed a solution.
+Recall from linear system theory that for the system $\dot{x}=Ax$ a solution for $x$ takes the form $x(t)=e^{At}x(0)$.
+Simple substitution shows that $x(t)$ is indeed a solution.
 
 \begin{theorem}
 Let $x=0$.
 \begin{enumerate}
 \item System is stable if and only if $\text{Re}(\lambda_i)\leq0$ and $(\text{Re}(\lambda_i)=0\Rightarrow m_i=1)\forall i$.
-\item System is asymptotically stable if and only if $\text{Re}(\lambda_i)<0 \forall i$. In this case the system matrix $A$ is called a Hurwitz matrix.
+\item System is asymptotically stable if and only if $\text{Re}(\lambda_i)<0 \forall i$.
+In this case the system matrix $A$ is called a Hurwitz matrix.
 \end{enumerate}
 \end{theorem}
 
-For linear systems reasonable Lyapunov functions are quadratic where $V(x)=x^T Px$, $P=P^T>0$. This leads to
+For linear systems reasonable Lyapunov functions are quadratic where $V(x)=x^T Px$, $P=P^T>0$.
+This leads to
 \begin{align}
 \label{eq:10linearLyapDeriv}
 \dot{V} = x^T(PA+A^T P)x = -x^T Qx
@@ -101,5 +117,3 @@ Let
 $$P=\int_0^\infty e^{A^T t}Qe^{At}dt.$$
 The other direction of the if and only if follows trivially from the Lyapunov function in (\ref{eq:10linearLyapDeriv}).
 \end{proof}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

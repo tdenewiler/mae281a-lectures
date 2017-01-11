@@ -1,5 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \mainmatter%
 \setcounter{page}{1}
 
@@ -30,8 +28,10 @@ This means that the solution is bounded for any initial condition as in Figure~\
 \begin{align*}
 \lim_{t\to\infty}x(t) = 0,
 \end{align*}
-Attractiveness does not concern the rate of convergence or even stability of the system to the equilibrium point. Note that it is difficult to describe a real physical system that is attractive but not stable, however mathtematically it must be considered. See Figure~\ref{fig:07attractiveNotStable} for an example of a system that is attractive but not stable.
-\item \textit{asymptotically stable} (a.s) if the equilibrium point is stable and attractive,
+Attractiveness does not concern the rate of convergence or even stability of the system to the equilibrium point.
+Note that it is difficult to describe a real physical system that is attractive but not stable, however mathtematically it must be considered.
+See Figure~\ref{fig:07attractiveNotStable} for an example of a system that is attractive but not stable.
+\item \textit{asymptotically stable} (a.s.) if the equilibrium point is stable and attractive,
 \item \textit{globally asymptotically stable} (g.a.s.) if the equilibrium point is a.s. $\forall x_0\in\mathbb{R}^n$.
 \end{itemize}
 \end{definition}
@@ -44,7 +44,8 @@ Attractiveness does not concern the rate of convergence or even stability of the
 \end{figure}
 
 \begin{definition}
-Consider the system $\dot{x}=f(x)$ and a scalar valued $V(x)$. Then
+Consider the system $\dot{x}=f(x)$ and a scalar valued $V(x)$.
+Then
 \begin{align*}
 \dot{V}(x) = \sum_{i=1}^n \frac{\partial V}{\partial x_i} f_i(x) = \frac{\partial V}{\partial x}f = \nabla V^T f = L_f V
 \end{align*}
@@ -69,12 +70,13 @@ Let $x=0$ be an equilibrium point of $\dot{x}=f(x)$ and let $V:D\to\mathbb{R}$, 
 The function $V$ can be thought of as the energy of the system.
 
 \begin{example}
-Let $\dot{x}=-\sin(x)$. The equilibria are at $x=k\pi$, $k\in\mathbb{Z}$ such as the equilibrium point at $x=0$. Let $V(x)=\tfrac{1}{2}x^2$, then $\dot{V}(x)=x\dot{x}=-x\sin(x)$. It can be seen that
+Let $\dot{x}=-\sin(x)$.
+The equilibria are at $x=k\pi$, $k\in\mathbb{Z}$ such as the equilibrium point at $x=0$.
+Let $V(x)=\tfrac{1}{2}x^2$, then $\dot{V}(x)=x\dot{x}=-x\sin(x)$.
+It can be seen that
 \begin{itemize}
 \item $\dot{V}(x) < 0 \forall x\in(-\pi,\pi)-\{0\}$,
 \item the origin $x=0$ is a.s.
 \end{itemize}
 $\lozenge$
 \end{example}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
