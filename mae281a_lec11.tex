@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\mainmatter
+\mainmatter%
 \setcounter{page}{1}
 
 \lectureseries[\course]{\course}
@@ -8,7 +8,7 @@
 \auth[\lecAuth]{Lecturer: \lecAuth\\ Scribe: \scribe}
 \date{February 9, 2010}
 
-\setaddress
+\setaddress%
 
 % the following hack starts the lecture numbering at 1
 \setcounter{lecture}{10}
@@ -20,7 +20,7 @@
 Invariance concerns a function, $\dot{x}=f(x)$, converging to a set and then staying inside that set.
 
 \begin{example}
-Using the dynamics of a pendulum previously described in Example \ref{ex:03pendulum} consider the Lyapunov function with derivative
+Using the dynamics of a pendulum previously described in Example~\ref{ex:03pendulum} consider the Lyapunov function with derivative
 $$\dot{V} = \frac{d}{dt}\left\{\frac{g}{l}\left(1-\cos x_1\right) + \frac{1}{2}x_2^2\right\} = -\frac{k}{m}x_2^2$$
 which is negative semidefinite. This does not result in asymptotic stability because of the negative semidefinite character of the derivative. However, we do get $\dot{V}=0$ on $x_2=0$.
 
@@ -52,7 +52,7 @@ V &= x^2 + 8y^2 \\
 \end{align*}
 This gives $\mathcal{E}=\{x=0\}$ as the equilibrium set. Since $x=0$ is an equilibrium set we have $\mathcal{M}=\mathcal{E}$. By LaSalle's theorem
 \begin{align*}
-\left[\begin{array}{c} x(t) \\ y(t) \end{array}\right] \to \mathcal{M} = \{x=0\}.
+\left[\begin{array}{c} x(t) \\ y(t) \end{array}\right] \to\mathcal{M} = \{x=0\}.
 \end{align*}
 $\lozenge$
 \end{example}
@@ -85,20 +85,20 @@ Let $x=0$.
 \end{enumerate}
 \end{theorem}
 
-For linear systems reasonable Lyapunov functions are quadratic where $V(x)=x^TPx$, $P=P^T>0$. This leads to
+For linear systems reasonable Lyapunov functions are quadratic where $V(x)=x^T Px$, $P=P^T>0$. This leads to
 \begin{align}
 \label{eq:10linearLyapDeriv}
-\dot{V} = x^T(PA+A^TP)x = -x^TQx
+\dot{V} = x^T(PA+A^T P)x = -x^T Qx
 \end{align}
 This is what we want to find to show that $A$ is stable for all $x$.
 
 \begin{theorem}
-The system matrix $A$ is Hurwitz if and only if $\forall Q=Q^T>0\exists$ a unique $P=P^T>0$ such that $PA+A^TP = -Q$.
+The system matrix $A$ is Hurwitz if and only if $\forall Q=Q^T>0\exists$ a unique $P=P^T>0$ such that $PA+A^T P = -Q$.
 \end{theorem}
 
 \begin{proof}
 Let
-$$P=\int_0^\infty e^{A^Tt}Qe^{At}dt.$$
+$$P=\int_0^\infty e^{A^T t}Qe^{At}dt.$$
 The other direction of the if and only if follows trivially from the Lyapunov function in (\ref{eq:10linearLyapDeriv}).
 \end{proof}
 

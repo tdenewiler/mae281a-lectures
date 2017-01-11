@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\mainmatter
+\mainmatter%
 \setcounter{page}{1}
 
 \lectureseries[\course]{\course}
@@ -8,7 +8,7 @@
 \auth[\lecAuth]{Lecturer: \lecAuth\\ Scribe: \scribe}
 \date{January 19, 2010}
 
-\setaddress
+\setaddress%
 
 % the following hack starts the lecture numbering at 1
 \setcounter{lecture}{4}
@@ -22,7 +22,7 @@ This lecture is focused on continuity as found in Chapter 3 of Khalil.
 \begin{theorem}
 \label{th:05lip}
 Consider $\dot{x} = f(t,x)$. Let $f(t,x)$ be piecewise continuous in $t$ and Lipschitz in $x$ such that
-$$|f(t,x) - f(t,y)| \leq L|x-y|, ~\forall x,y\in\mathcal{B} = \{x\in\mathbb{R}^n ~|~ |x-x_0|\leq r\}, ~\forall t\in[t_0,t_1]$$
+$$|f(t,x) - f(t,y)| \leq L|x-y|,~\forall x,y\in\mathcal{B} = \{x\in\mathbb{R}^n~|~|x-x_0|\leq r\},~\forall t\in[t_0,t_1]$$
 where $L>0$ is a constant. Then there exists $\delta>0$ such that the system has a unqiue solution over $[t_0,t_0+\delta]$ with $t_0+\delta\leq t_1$.
 \end{theorem}
 
@@ -33,33 +33,32 @@ where $\mathcal{C}^0$ means a function is continuous and $\mathcal{C}^1$ means a
 The piecewise continuous condition only needs to be satisfied such that there is more than an infinitesimal amount of time between switching, for example in a system with relays. This theorem holds for $\delta$ amount of time where $\delta$ is based on the initial conditions $x_0$.
 
 \begin{example}
-Figure \ref{fig:05lip} shows two examples of functions where $L=1$. They are both Lipschitz, and therefore $\mathcal{C}^0$, but not $\mathcal{C}^1$. To see that $L=1$ take any two points, find the slope (in absolute value terms) and that slope will always be less than or equal to one.
+Figure~\ref{fig:05lip} shows two examples of functions where $L=1$. They are both Lipschitz, and therefore $\mathcal{C}^0$, but not $\mathcal{C}^1$. To see that $L=1$ take any two points, find the slope (in absolute value terms) and that slope will always be less than or equal to one.
 $\lozenge$
 \end{example}
 
 \begin{figure}[ht!]
-	\centering
-	\includegraphics[width=.7\textwidth]{images/05lip}
-	\caption{Two functions that are Lipschitz with $L=1$.}
-	\label{fig:05lip}
+\centering
+\includegraphics[width=.7\textwidth]{images/05lip}
+\caption{Two functions that are Lipschitz with $L=1$.}
+\label{fig:05lip}
 \end{figure}
 
 \begin{example}
-Figure \ref{fig:05notlip} shows a function that is $\mathcal{C}^0$ but not Lipschitz. Near the origin the slope is infinite. Note that if we consider only the range $[0+\epsilon,\infty)$ then this function is Lipschitz and $\mathcal{C}^1$.
+Figure~\ref{fig:05notlip} shows a function that is $\mathcal{C}^0$ but not Lipschitz. Near the origin the slope is infinite. Note that if we consider only the range $[0+\epsilon,\infty)$ then this function is Lipschitz and $\mathcal{C}^1$.% chktex 9
 $\lozenge$
 \end{example}
 
 \begin{figure}[ht!]
-	\centering
-	%\includegraphics[width=.5\textwidth]{images/05notlip}
-	\includegraphics[width=.5\textwidth]{images/plotSqrtX}
-	\caption{The function $f(x) = \sqrt{x}$ is not Lipschitz.}
-	\label{fig:05notlip}
+\centering
+\includegraphics[width=.5\textwidth]{images/plotSqrtX}
+\caption{The function $f(x) = \sqrt{x}$ is not Lipschitz.}
+\label{fig:05notlip}
 \end{figure}
 
 \begin{definition}
 The \textit{Euclidean norm} of a matrix is given as
-$$|P| = \sqrt{\lambda_{\text{max}}(P^TP)}$$
+$$|P| = \sqrt{\lambda_{\text{max}}(P^T P)}$$
 \end{definition}
 
 \begin{lemma}
@@ -98,20 +97,20 @@ $\lozenge$
 \end{example}
 
 \section{Continuation of Solutions}
-Theorem \ref{th:05lip} can be applied repeatedly to get
+Theorem~\ref{th:05lip} can be applied repeatedly to get
 \begin{align*}
 \left[\begin{array}{c} t_0 \\ x(t_0) \end{array}\right] \xrightarrow{\delta}
 \left[\begin{array}{c} t_0+\delta \\ x(t_0+\delta) \end{array}\right] \xrightarrow{\delta_2}
-\left[\begin{array}{c} t_0+\delta+\delta_2 \\ x(t_0+\delta+\delta_2) \end{array}\right] \rightarrow
-\cdots \rightarrow
+\left[\begin{array}{c} t_0+\delta+\delta_2 \\ x(t_0+\delta+\delta_2) \end{array}\right] \rightarrow{}
+\ldots \rightarrow{}
 \left[\begin{array}{c} T \\ x(T) \end{array}\right]
 \end{align*}
-The range $[t_0, T]$ gives the maximal interval of existence for the solution of a system. In the above expression the $\delta$ intervals will likely get smaller and smaller at each step and converge at a finite time $T$. However, $x(T)$ may be infinite or non-unique. Note that this concept is just a theoretical construct to show that the Theorem \ref{th:05lip} is to be applied multiple times.
+The range $[t_0, T]$ gives the maximal interval of existence for the solution of a system. In the above expression the $\delta$ intervals will likely get smaller and smaller at each step and converge at a finite time $T$. However, $x(T)$ may be infinite or non-unique. Note that this concept is just a theoretical construct to show that the Theorem~\ref{th:05lip} is to be applied multiple times.
 
 \begin{example}
 Consider
 $$\dot{x} = x^3 \Rightarrow x(t) = \frac{x_0}{\sqrt{1-2x_0^2t}}$$
-The maximal interval of existence is $t=[0,\frac{1}{2x_0^2})$.
+The maximal interval of existence is $t=[0,\frac{1}{2x_0^2})$.% chktex 9
 $\lozenge$
 \end{example}
 
@@ -119,11 +118,11 @@ $\lozenge$
 If a function $f$ is globally Lipschitz in $x$ then $\dot{x}=f(t,x)$ has a unique solution for all time.
 \end{theorem}
 
-Theorem \ref{th:05lipbound} is a crucial theorem to understand for the remainder of this course.
+Theorem~\ref{th:05lipbound} is a crucial theorem to understand for the remainder of this course.
 \begin{theorem}
 \label{th:05lipbound}
 Let the function $f$ be Lipschitz. Suppose it is also known that every solution of $\dot{x}=f(t,x)$ is bounded. Then there is a unique solution defined for all $t\geq t_0$.
 \end{theorem}
 
 The crucial part involves some energy analysis to show that the solution $x(t)$ is bounded. This is what the rest of this course will be studying.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% chktex 17

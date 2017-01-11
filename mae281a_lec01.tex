@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\mainmatter
+\mainmatter%
 \setcounter{page}{1}
 
 \lectureseries[\course]{\course}
@@ -8,7 +8,7 @@
 \auth[\lecAuth]{Lecturer: \lecAuth\\ Scribe: \scribe}
 \date{January 5, 2010}
 
-\setaddress
+\setaddress%
 
 % the following hack starts the lecture numbering at 1
 \setcounter{lecture}{0}
@@ -56,22 +56,22 @@ In the linear case $\dot{x}=Ax$ we have $\text{null}(A)$ is the equilibria manif
 \begin{example}
 Let
 $$\dot{x} = x-x^3 = x(1-x^2)$$
-The equilibria are found when $f(x)=0$ which in this case leads to $x=0,\pm1$. Figure \ref{fig:01roots} shows where the equilibria lie on a line and Figure \ref{fig:01traj} shows how the solution depends on the initial conditions. The highlighted initial conditions are when $x_0\gg1$, $x_0\ll1$, $0<x_0<1$ and $-1<x_0<0$. Later in this course we will see that the $\pm1$ equilibria are attracting and the $0$ equilibrium is repellant and that attracting equilibria are stable while repellant equilibria are unstable.
+The equilibria are found when $f(x)=0$ which in this case leads to $x=0,\pm1$. Figure~\ref{fig:01roots} shows where the equilibria lie on a line and Figure~\ref{fig:01traj} shows how the solution depends on the initial conditions. The highlighted initial conditions are when $x_0\gg1$, $x_0\ll1$, $0<x_0<1$ and $-1<x_0<0$. Later in this course we will see that the $\pm1$ equilibria are attracting and the $0$ equilibrium is repellant and that attracting equilibria are stable while repellant equilibria are unstable.
 $\lozenge$
 \end{example}
 
 \begin{figure}[ht!]
-	\centering
-	\includegraphics[width=.4\textwidth]{images/01roots}
-	\caption{Equilibria points.}
-	\label{fig:01roots}
+\centering
+\includegraphics[width=.4\textwidth]{images/01roots}
+\caption{Equilibria points.}
+\label{fig:01roots}
 \end{figure}
 
 \begin{figure}[ht!]
-	\centering
-	\includegraphics[width=.4\textwidth]{images/01traj}
-	\caption{State trajectory.}
-	\label{fig:01traj}
+\centering
+\includegraphics[width=.4\textwidth]{images/01traj}
+\caption{State trajectory.}
+\label{fig:01traj}
 \end{figure}
 
 \section{Finite Escape Time}
@@ -85,30 +85,30 @@ $\lozenge$
 \begin{example}
 A nonlinear unstable system is given by
 $$\dot{x} = x^3 \Rightarrow \frac{dx}{dt}=x^3 \Rightarrow \int\frac{dx}{x^3} = \int dt \Rightarrow x(t) = \frac{x_0}{\sqrt{1-2x_0^2t}}$$
-This solution blows up as $t\to\frac{1}{2x_0^2}$ because then there is a division by zero, see Figure \ref{fig:01blowup}. Notice that for smaller initial conditions the system blows up later than for larger initial conditions. The rule of thumb is to pay special attention to instabilities larger than linear in growth.
+This solution blows up as $t\to\frac{1}{2x_0^2}$ because then there is a division by zero, see Figure~\ref{fig:01blowup}. Notice that for smaller initial conditions the system blows up later than for larger initial conditions. The rule of thumb is to pay special attention to instabilities larger than linear in growth.
 $\lozenge$
 \end{example}
 
 \begin{figure}[ht!]
-	\centering
-	\includegraphics[width=.4\textwidth]{images/01blowup}
-	\caption{Effect of initial conditions on stability.}
-	\label{fig:01blowup}
+\centering
+\includegraphics[width=.4\textwidth]{images/01blowup}
+\caption{Effect of initial conditions on stability.}
+\label{fig:01blowup}
 \end{figure}
 
 \section{Limit Cycle}
 \begin{example}
 A linear limit cycle is given by a second order linear harmonic system such as an LC circuit or a mass-spring system where
 $$\ddot{x} + x = 0$$
-See Figure \ref{fig:01secondorder}.
+See Figure~\ref{fig:01secondorder}.
 $\lozenge$
 \end{example}
 
 \begin{figure}[ht!]
-	\centering
-	\includegraphics[width=.4\textwidth]{images/01secondorder}
-	\caption{Oscillation for a second order linear system.}
-	\label{fig:01secondorder}
+\centering
+\includegraphics[width=.4\textwidth]{images/01secondorder}
+\caption{Oscillation for a second order linear system.}
+\label{fig:01secondorder}
 \end{figure}
 
 \begin{example}

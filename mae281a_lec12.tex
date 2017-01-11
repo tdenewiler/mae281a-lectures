@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\mainmatter
+\mainmatter%
 \setcounter{page}{1}
 
 \lectureseries[\course]{\course}
@@ -8,7 +8,7 @@
 \auth[\lecAuth]{Lecturer: \lecAuth\\ Scribe: \scribe}
 \date{February 11, 2010}
 
-\setaddress
+\setaddress%
 
 % the following hack starts the lecture numbering at 1
 \setcounter{lecture}{11}
@@ -47,7 +47,7 @@ $\lozenge$
 
 Other inconclusive situations include:
 \begin{align*}
-A &= \left[\begin{array}{c c} 0 & 1 \\ -1 & 0 \end{array}\right] \Rightarrow \lambda(A)=\pm i \\
+A &= \left[\begin{array}{c c} 0 & 1 \\ -1 & 0 \end{array}\right] \Rightarrow\lambda(A)=\pm{}i \\
 A &= \left[\begin{array}{c c} 0 & 0 \\ 0 & -1 \end{array}\right] \\
 A &= \left[\begin{array}{c c} 0 & 0 \\ 0 & 0 \end{array}\right]
 \end{align*}
@@ -74,7 +74,7 @@ The main point to take away from this is that we cannot determine stability by a
 \begin{example}
 Let the system be
 $$A(t) = \left[\begin{array}{c c} -1+1.5\cos^2t & 1-1.5\sin t\cos t \\ -1-1.5\sin t\cos t & -1+1.5\sin^2t \end{array}\right].$$
-The eigenvalues are $\lambda(A(t)) = \{-0.25\pm 0.25\sqrt{7}j\}$. These eigenvalues are stable and constant. However, the system written as
+The eigenvalues are $\lambda(A (t)) = \{-0.25\pm{} 0.25\sqrt{7}j\}$. These eigenvalues are stable and constant. However, the system written as
 $$\Phi(t,0) = \left[\begin{array}{c c} e^{0.5t}\cos t & e^{-t}\sin t \\ -e^{0.5t}\sin t & e^{-t}\cos t \end{array}\right]$$
 is not stable.
 
@@ -84,8 +84,8 @@ $\lozenge$
 
 \begin{theorem}
 \begin{align*}
--\dot{P} &= PA + A^TP + Q \\
-V &= x^TP(t)x
+-\dot{P} &= PA + A^T P + Q \\
+V &= x^T P(t)x
 \end{align*}
 \end{theorem}
 
@@ -105,7 +105,7 @@ Then we can take a Taylor series expansion in $\epsilon$ only because time is no
 \begin{align}
 \label{eq:10taylor}
 \begin{split}
-x(t,\epsilon) &= x_0(t) + \sum_{k=1}^{N-1}\epsilon^kx_k(t) + \epsilon^Nx_R(t,\epsilon) \\
+x(t,\epsilon) &= x_0(t) + \sum_{k=1}^{N-1}\epsilon^k x_k(t) + \epsilon^N x_R(t,\epsilon) \\
 \eta(\epsilon) &= \eta(0) + \sum_{k=1}^{N-1}\epsilon^k\eta_k + \epsilon^N\eta_k(\epsilon) \\
 x_k(0) &= \eta_k
 \end{split}
