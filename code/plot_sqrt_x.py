@@ -1,19 +1,17 @@
 #! /usr/bin/env python
 # coding: utf-8
-"""
-Plot the function $f(x) = sqrt{x}$.
-"""
+"""Plot the function $f(x) = sqrt{x}$."""
 
-import matplotlib
-matplotlib.use('Qt4Agg') # For use over SSH.
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib # pylint: disable=import-error
+matplotlib.use('Qt4Agg') # For use over SSH.
+import matplotlib.pyplot as plt # pylint: disable=import-error,wrong-import-position
 
-class CustomPlotter(object):
-    """
-    Plot custom function.
-    """
+class CustomPlotter():
+    """Plot custom function."""
+
     def __init__(self):
+        """Plot function."""
         self.saveplots = True
         self.dpi = 100
         xres = 0.001
@@ -23,9 +21,7 @@ class CustomPlotter(object):
 
     @classmethod
     def generate_data(cls, xres):
-        """
-        Generate data for function.
-        """
+        """Generate data for function."""
         xres = 0.001
         x = np.arange(-1, 5, xres)
         y = np.sqrt(x) # pylint: disable=no-member
@@ -33,9 +29,7 @@ class CustomPlotter(object):
         return x, y
 
     def show_plots(self, x, y):
-        """
-        Show and save plots.
-        """
+        """Show and save plots."""
         plt.plot(x, y)
         plt.axis('equal')
         plt.xlabel(r'$x$')

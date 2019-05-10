@@ -1,0 +1,11 @@
+global:
+  exceptions:
+    message_regex:
+      - tools: [chktex]
+        regex: "Could not execute LaTeX command.+"
+      - tools: [lacheck]
+        regex: "Do not use @ in LaTeX macro names.+"
+      - tools: [lacheck]
+        regex: "Could not open .+"
+      - tools: [lacheck]
+        regex: "Old style class defined"
