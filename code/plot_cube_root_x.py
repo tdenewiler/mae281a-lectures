@@ -1,20 +1,18 @@
 #! /usr/bin/env python
 # coding: utf-8
-"""
-Plot the function $f(x) = sqrt{3}{x}$.
-"""
+"""Plot the function $f(x) = sqrt{3}{x}$."""
 
 from __future__ import division
-import matplotlib
-matplotlib.use('Qt4Agg') # For use over SSH.
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib # pylint: disable=import-error
+matplotlib.use('Qt4Agg') # For use over SSH.
+import matplotlib.pyplot as plt # pylint: disable=import-error,wrong-import-position
 
-class CustomPlotter(object):
-    """
-    Plot custom function.
-    """
+class CustomPlotter():
+    """Plot custom function."""
+
     def __init__(self):
+        """Plot function."""
         self.saveplots = True
         self.dpi = 100
         xres = 0.001
@@ -24,18 +22,14 @@ class CustomPlotter(object):
 
     @classmethod
     def generate_data(cls, xres):
-        """
-        Generate data for function.
-        """
+        """Generate data for function."""
         x = np.arange(-1, 5, xres)
         y = x**(1/3)
 
         return x, y
 
     def show_plots(self, x, y):
-        """
-        Show and save plots.
-        """
+        """Show and save plots."""
         plt.plot(x, y)
         plt.axis('equal')
         plt.xlabel(r'$x$')

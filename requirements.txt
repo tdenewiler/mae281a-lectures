@@ -1,0 +1,2 @@
+statick
+statick-tex

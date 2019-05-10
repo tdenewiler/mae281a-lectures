@@ -70,9 +70,9 @@
 % We also introduce \iffirstlecture, which is set to true by the
 % \lectureseries command so that the top-of-page formatting is not repeated
 % by the \lecture command in this case.
-\newif\iffirstlecture\firstlecturefalse
+\newif\iffirstlecture\firstlecturefalse%
 
-\newcommand{\lectureseries}{\firstlecturetrue
+\newcommand{\lectureseries}{\firstlecturetrue%
               \secdef\@lectureseries\@slectureseries}
 
 \newcommand{\@lectureseries}[2][default]{\chapter*{#2}%
@@ -86,17 +86,17 @@
 % using \@dblarg rather than \secdef.)
 \renewcommand{\auth}{\secdef\@auth\@sauth}
 
-\newcommand{\@auth}[2][default]{\vspace{-1pc}{\raggedleft
+\newcommand{\@auth}[2][default]{\vspace{-1pc}{\raggedleft%
         \Large\bf\noindent
-        #2\endgraf
+        #2\endgraf%
         \vspace*{2pc}
         }
         \def\@author{#1}%
 }
 
-\newcommand{\@sauth}[1]{\vspace{-1pc}{\raggedleft
+\newcommand{\@sauth}[1]{\vspace{-1pc}{\raggedleft%
         \Large\bf\noindent
-        #1\endgraf
+        #1\endgraf%
         \vspace*{2pc}
         }
         \def\@author{#1}%
@@ -109,20 +109,20 @@
 % Also, \lecture now takes an argument specifying the title, in place of
 % the old \lecturename command.
 
-\def\lecture#1{\global\Lecturetrue\global\Monographfalse
-\iffirstlecture\else\chapter*{}\fi\firstlecturefalse
-  \global\let\sectionmark\@gobble % \lecturemark will be used instead
+\def\lecture#1{\global\Lecturetrue\global\Monographfalse%
+\iffirstlecture\else\chapter*{}\fi\firstlecturefalse%
+  \global\let\sectionmark\@gobble% \lecturemark will be used instead
   \addtocounter{lecture}1\relax
   \refstepcounter{chapter}%
 %  \addtocounter{chapter}1\relax % this is done for section numbering
 \gdef\thelecturename{#1\unskip}
   {\Large\bfseries
-   \raggedleft
+   \raggedleft%
    \@xp\uppercase\@xp{\thelecturelabel} {\LARGE\thelecturenum}\\
    \vspace*{3pt}%
-   \thelecturename
+   \thelecturename%
    \endgraf}%
-  \let\@secnumber=\thelecturenum
+  \let\@secnumber=\thelecturenum%
   \@xp\lecturemark\@xp{\thelecturename}%
   \addcontentsline{toc}{chapter}{%
     \thelecturelabel\ \thelecturenum.\ \thelecturename}%
@@ -131,24 +131,24 @@
 % In v.1.1, \lecture is redefined again, to implement the inclusion of a
 % "starred" form \lecture*.
 
-\def\lecture{\global\Lecturetrue\global\Monographfalse
+\def\lecture{\global\Lecturetrue\global\Monographfalse%
 \iffirstlecture\else\chapter*{}\fi%
-  \global\let\sectionmark\@gobble % \lecturemark will be used instead
+  \global\let\sectionmark\@gobble% \lecturemark will be used instead
 \secdef\@lecture\@slecture}
 
 \def\@lecture[#1]#2{%
   \addtocounter{lecture}1\relax
   \refstepcounter{chapter}%
 %  \addtocounter{chapter}1\relax % this is done for section numbering
-\gdef\thelecturename{#1\unskip}\firstlecturefalse
+\gdef\thelecturename{#1\unskip}\firstlecturefalse%
   {\Large\bfseries
-   \raggedleft
+   \raggedleft%
    \@xp\uppercase\@xp{\thelecturelabel} {\LARGE\thelecturenum}\\
    \vspace*{3pt}%
 %   \thelecturename
-    #2\unskip
+    #2\unskip%
    \endgraf}%
-  \let\@secnumber=\thelecturenum
+  \let\@secnumber=\thelecturenum%
   \@xp\lecturemark\@xp{\thelecturename}%
   \addcontentsline{toc}{chapter}{%
 %    \thelecturelabel\ \thelecturenum.\ \thelecturename}%
@@ -156,7 +156,7 @@
   \vspace{34\p@}\noindent}
 
 \def\slecturerunhead#1#2#3{%
-    \let\@tempa\chaptername
+    \let\@tempa\chaptername%
     \uppercasenonmath{\@tempa}%
     \def\@tempb{#3\unskip}%
     \uppercasenonmath{\@tempb}%
@@ -168,19 +168,19 @@
 
 
 \def\@slecture#1{%
-\iffirstlecture
+\iffirstlecture%
 %  \addtocounter{lecture}1\relax
 %  \refstepcounter{chapter}%
 %%  \addtocounter{chapter}1\relax % this is done for section numbering
-\gdef\thelecturename{#1\unskip}\firstlecturefalse
+\gdef\thelecturename{#1\unskip}\firstlecturefalse%
   {\Large\bfseries
 %   \raggedleft
 %   \@xp\uppercase\@xp{\thelecturelabel} {\LARGE\thelecturenum}\\
 %   \vspace*{3pt}%
 %\noindent\@xp\uppercase\@xp{\thelecturename}
-\noindent\thelecturename
+\noindent\thelecturename%
    \endgraf}%
-  \let\@secnumber=\thelecturenum
+  \let\@secnumber=\thelecturenum%
   \@xp\slecturemark\@xp{\thelecturename}%
 %\markright\thelecturename
   \addcontentsline{toc}{chapter}{%
@@ -191,14 +191,14 @@
 %  \addtocounter{lecture}1\relax
 %  \refstepcounter{chapter}%
 %%  \addtocounter{chapter}1\relax % this is done for section numbering
-\gdef\thelecturename{#1\unskip}\firstlecturefalse
+\gdef\thelecturename{#1\unskip}\firstlecturefalse%
   {\Large\bfseries
-   \raggedleft
+   \raggedleft%
 %   \@xp\uppercase\@xp{\thelecturelabel} {\LARGE\thelecturenum}\\
 %   \vspace*{3pt}%
    \@xp\uppercase\@xp{\thelecturename}
    \endgraf}%
-  \let\@secnumber=\thelecturenum
+  \let\@secnumber=\thelecturenum%
   \@xp\slecturemark\@xp{\thelecturename}%
 %\markright\thelecturename
   \addcontentsline{toc}{chapter}{%
@@ -210,22 +210,22 @@
 % (1) add \textmd so that the header is not boldface
 % (2) use a comma, not a period, to separate author and lectureseries
 
-\ifLecture
+\ifLecture%
   \def\chapterrunhead#1#2#3{%
-    \let\@tempa\@author
+    \let\@tempa\@author%
     \uppercasenonmath{\@tempa}%
     \uppercasenonmath{\thelectureseries}%
     \textmd{\@tempa, \thelectureseries}
     }
   \def\lecturerunhead#1#2#3{%
-    \let\@tempa\chaptername
+    \let\@tempa\chaptername%
     \uppercasenonmath{\@tempa}%
     \def\@tempb{#3\unskip}%
     \uppercasenonmath{\@tempb}%
     \textmd{\@tempa\ #2. \@tempb}
     }
 \else
-  \let\chapterrunhead\partrunhead
+  \let\chapterrunhead\partrunhead%
 \fi
 
 % For the bibliography, we do two things
@@ -235,14 +235,14 @@
 % NOT be in backmatter.
 % (2) we fix the running heads to be consistent with everything else.
 
-\newif\ifBibliographyIsASection\BibliographyIsASectionfalse
+\newif\ifBibliographyIsASection\BibliographyIsASectionfalse%
 
   \def\bibliomark{%\let\@secnumber\@empty
 %    \@secmark\markright\sectionrunhead\sectionname}%
     \@secmark\markright\bibliorunhead\chaptername}%
 
   \def\bibliorunhead#1#2#3{%
-    \let\@tempa\chaptername
+    \let\@tempa\chaptername%
     \uppercasenonmath{\@tempa}%
     \def\@tempb{#3\unskip}%
     \uppercasenonmath{\@tempb}%
@@ -250,30 +250,30 @@
     }
 
 \def\thebibliography#1{%
-  \ifBibliographyIsASection
-    \section*\refname
-    \if@backmatter
+  \ifBibliographyIsASection%
+    \section*\refname%
+    \if@backmatter%
       \markboth{\refname}{\refname}%
     \fi
   \else
 \chapter*{}
   {\Large\bfseries
-   \raggedleft
+   \raggedleft%
    \@xp\uppercase\@xp{\bibname} \\
    \endgraf}%
-  \let\@secnumber=\thelecturenum
+  \let\@secnumber=\thelecturenum%
   \@xp\bibliomark\@xp{\bibname}%
   \addcontentsline{toc}{chapter}{%
     \bibname}%
   \vspace{34\p@}\noindent
   \fi
-  \normalsize\labelsep .5em\relax
+  \normalsize\labelsep.5em\relax%
   \list{\@arabic\c@enumi.}{\settowidth\labelwidth{\@biblabel{#1}}%
-  \leftmargin\labelwidth
-  \advance\leftmargin\labelsep
-%	\bibsetup\relax
-	\usecounter{enumi}}\sloppy
-  \clubpenalty9999 \widowpenalty\clubpenalty  \sfcode`\.\@m}
+  \leftmargin\labelwidth%
+  \advance\leftmargin\labelsep%
+%  \bibsetup\relax
+  \usecounter{enumi}}\sloppy
+  \clubpenalty9999 \widowpenalty\clubpenalty\sfcode`\.\@m}
 
 % We also want to change the headings and running heads for the index.  We
 % only do this in the case of a lecture (so the previous definition will still
@@ -284,28 +284,28 @@
     \@secmark\markright\indexrunhead\chaptername}%
 
   \def\indexrunhead#1#2#3{%
-    \let\@tempa\chaptername
+    \let\@tempa\chaptername%
     \uppercasenonmath{\@tempa}%
     \def\@tempb{#3\unskip}%
     \uppercasenonmath{\@tempb}%
     \textmd{\@tempb}
     }
 
-\ifLecture
-\def\theindex{\cleardoublepage
+\ifLecture%
+\def\theindex{\cleardoublepage%
 \@restonecoltrue\if@twocolumn\@restonecolfalse\fi
 \columnseprule \z@ \columnsep 35pt
-\def\indexchap{\@startsection
-		{chapter}{1}{\z@}{8pc}{34pt}%
-		{\raggedleft
-		\Large\bfseries}}%
+\def\indexchap{\@startsection%
+    {chapter}{1}{\z@}{8pc}{34pt}%
+    {\raggedleft%
+    \Large\bfseries}}%
  \twocolumn[\indexchap[{\indexname}]{\@xp\uppercase\@xp{\indexname}}]
-%		\Large\bfseries}}%
+%    \Large\bfseries}}%
 % \twocolumn[\indexchap*{\@xp\uppercase\@xp{\indexname}}]
 % \@mkboth{{\indexname}}{{\indexname}}%
   \@xp\indexmark\@xp{\indexname}%
-	\thispagestyle{plain}\let\item\@idxitem\parindent\z@
-	 \footnotesize\parskip\z@ plus .3pt\relax\let\item\@idxitem}
+  \thispagestyle{plain}\let\item\@idxitem\parindent\z@
+   \footnotesize\parskip\z@ plus .3pt\relax\let\item\@idxitem}
 \fi
 
 % Finally, a small stylistic change: for the footnote giving the author
@@ -323,13 +323,13 @@
 
 \def\setaddress{%
   {\let\@makefnmark\relax  \let\@thefnmark\relax
-        \nobreak
+        \nobreak%
         \addressnum@=\z@
-        \loop\ifnum\addressnum@<\addresscount@\advance\addressnum@\@ne
-           \footnote{$^{\hbox{\tiny\number\addressnum@}}$%
+        \loop\ifnum\addressnum@<\addresscount@\advance\addressnum@\@ne%
+\footnote{$^{\hbox{\tiny\number\addressnum@}}$%
            \csname @address\number\addressnum@\endcsname
            \csname @curraddr\number\addressnum@\endcsname
-           \csname @email\number\addressnum@\endcsname}\repeat
+           \csname @email\number\addressnum@\endcsname}\repeat%
   \ifx\@empty\@date\else \@footnotetext{\@setdate}\fi
   \ifx\@empty\@subjclass\else \@footnotetext{\@setsubjclass}\fi
   \ifx\@empty\@keywords\else \@footnotetext{\@setkeywords}\fi
@@ -343,20 +343,20 @@
 
 \def\@tmpevenhead{\relax}
 
-\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
-    \let\@tmpevenhead\@evenhead \let\@evenhead\relax\hbox{}\eject
+\def\cleardoublepage{\clearpage\if@twoside\ifodd\c@page\else%
+    \let\@tmpevenhead\@evenhead\let\@evenhead\relax\hbox{}\eject%
     \let\@evenhead\@tmpevenhead\if@twocolumn\hbox{}\newpage\fi\fi\fi}
 
 % define \copyrightyear to be \currentyear (Dan Freed -- March 13, 1998)
 
 \def\@setcopyright{%
-  \let\copyrightyear\currentyear             % DF
+  \let\copyrightyear\currentyear% DF
   \insert\copyins{\hsize\textwidth
     \parfillskip\z@ \leftskip\z@\@plus.9\textwidth
     \fontsize{6}{7\p@}\normalfont\upshape
     \everypar{}%
-    \vskip-\skip\copyins \nointerlineskip
-    \noindent\vrule\@width\z@\@height\skip\copyins
+    \vskip-\skip\copyins\nointerlineskip%
+    \noindent\vrule\@width\z@\@height\skip\copyins%
     \copyright\copyrightyear\ American Mathematical Society\par
     \kern\z@}%
 }
@@ -367,7 +367,7 @@
 
 %fix font size of author:
 
-\renewcommand{\@auth}[2][default]{{\raggedleft
+\renewcommand{\@auth}[2][default]{{\raggedleft%
         \begingroup
   \fontsize{\@xivpt}{18}\bfseries%\centering
   #2\par \endgroup
@@ -376,7 +376,7 @@
         \def\@author{#1}%
 }
 
-\renewcommand{\@sauth}[1]{{\raggedleft
+\renewcommand{\@sauth}[1]{{\raggedleft%
         \begingroup
   \fontsize{\@xivpt}{18}\bfseries%\centering
   #1\par \endgroup
@@ -390,37 +390,37 @@
 \def\@lecture[#1]#2{%
   \addtocounter{lecture}1\relax
   \refstepcounter{chapter}%
-\gdef\thelecturename{#1\unskip}\firstlecturefalse
+\gdef\thelecturename{#1\unskip}\firstlecturefalse%
   {\Large\bfseries
-   \raggedleft
+   \raggedleft%
    \@xp\uppercase\@xp{\thelecturelabel} {\LARGE\thelecturenum}\\
    \vspace*{3pt}%
-    #2\unskip
+    #2\unskip%
    \endgraf}%
-  \let\@secnumber=\thelecturenum
+  \let\@secnumber=\thelecturenum%
   \@xp\lecturemark\@xp{\thelecturename}%
   \addcontentsline{toc}{chapter}{%
     \thelecturelabel\ \thelecturenum.\ #2}%
   \vspace{10\p@}\noindent}
 
 \def\@slecture#1{%
-\iffirstlecture
-\gdef\thelecturename{#1\unskip}\firstlecturefalse
+\iffirstlecture%
+\gdef\thelecturename{#1\unskip}\firstlecturefalse%
   {\Large\bfseries
-\noindent\thelecturename
+\noindent\thelecturename%
    \endgraf}%
-  \let\@secnumber=\thelecturenum
+  \let\@secnumber=\thelecturenum%
   \@xp\slecturemark\@xp{\thelecturename}%
   \addcontentsline{toc}{chapter}{%
     \thelecturename}%
  \vspace{-6\p@}\noindent
 \else
-\gdef\thelecturename{#1\unskip}\firstlecturefalse
+\gdef\thelecturename{#1\unskip}\firstlecturefalse%
   {\Large\bfseries
-   \raggedleft
+   \raggedleft%
    \@xp\uppercase\@xp{\thelecturename}
    \endgraf}%
-  \let\@secnumber=\thelecturenum
+  \let\@secnumber=\thelecturenum%
   \@xp\slecturemark\@xp{\thelecturename}%
   \addcontentsline{toc}{chapter}{%
     \thelecturename}%
@@ -450,6 +450,7 @@
 \usepackage{hyperref}
 \usepackage[all]{hypcap}
 \usepackage{url}
+\usepackage{booktabs}
 \addtolength{\textwidth}{1cm}
 
 % EQUATION NUMBERING AND THEOREM SETUP
