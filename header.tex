@@ -27,11 +27,11 @@
         }
 
 % Only the next five fields need to be edited.
-\newcommand{\lecAuth}{William M. McEneaney}
+\newcommand{\lecAuth}{Miroslav Krstic}
 \newcommand{\scribe}{Thomas Denewiler}
-\newcommand{\authEmail}{wmceneaney@ucsd.edu}
+\newcommand{\authEmail}{krstic@ucsd.edu}
 \newcommand{\scribeEmail}{tdenewiler@gmail.com}
-\newcommand{\course}{MAE 288A:\@Optimal Control}
+\newcommand{\course}{MAE 281A:\@Nonlinear Systems}
 
 \address{Department of Mechanical and Aerospace Engineering, University of California, San Diego}
 
@@ -47,8 +47,8 @@
     urlcolor={black},
     pdfauthor={\scribe<\mailto{\scribeEmail}{\scribeEmail}>},
     pdfsubject={\course},
-	pdftitle={MAE 288A Lecture Notes},
-    pdfkeywords={UC San Diego, Optimal Control, Dynamic Programming},
+	pdftitle={MAE 281A Lecture Notes},
+    pdfkeywords={UC San Diego, Nonlinear Systems},
     pdfstartpage={1},
 }
 
@@ -68,14 +68,14 @@
   \begin{figure}[ht!]
     % Requires \usepackage{graphicx}
     \centering
-	\fbox{%
-	    \includegraphics[width=#2\columnwidth]{#1}
-	}
+  \fbox{%
+      \includegraphics[width=#2\columnwidth]{#1}
+  }
     %%% I think \captionwidth (see above) can go away as long as
     %%% \centering is above
     %\captionwidth{#2\columnwidth}%
     \caption{#3}
-    \label{#1} % NOLINT
+    \label{#1}% NOLINT
   \end{figure}}
 
 % Includes a MATLAB script.
@@ -86,7 +86,7 @@
   {\begin{itemize}\item[]\lstinputlisting[caption=#2,label=#1]{#1.m}\end{itemize}}
 
 % Example environment.
-\newtheoremstyle{example}{\topsep}{\topsep}	%
+\newtheoremstyle{example}{\topsep}{\topsep} %
      {}%         Body font
      {}%         Indent amount (empty = no indent, \parindent = para indent)
      {\bfseries}% Thm head font
@@ -97,50 +97,56 @@
    \theoremstyle{example}
    \newtheorem{example}{Example}[section]
 
-% Corollary environment.
-\newtheoremstyle{corollary}{\topsep}{\topsep} %
-     {}%         Body font
-     {}%         Indent amount (empty = no indent, \parindent = para indent)
-     {\bfseries}% Thm head font
-     {}%        Punctuation after thm head
-     {\newline}%     Space after thm head (\newline = linebreak)
-     {\thmname{#1}\thmnumber{#2}\thmnote{#3}}% Thm head spec
-
-   \theoremstyle{corollary}
-   \newtheorem{corollary}{Corollary}[section]
-
-% Proposition environment.
-\newtheoremstyle{proposition}{\topsep}{\topsep} %
-     {}%         Body font
-     {}%         Indent amount (empty = no indent, \parindent = para indent)
-     {\bfseries}% Thm head font
-     {}%        Punctuation after thm head
-     {\newline}%     Space after thm head (\newline = linebreak)
-     {\thmname{#1}\thmnumber{#2}\thmnote{#3}}% Thm head spec
-
-   \theoremstyle{proposition}
-   \newtheorem{proposition}{Proposition}[section]
-
-% \renewcommand{\labelenumi}{\arabic{enumi}.}
-
 % A command to show a vector norm that will have the pipe signs scale with the contents.
 \newcommand{\vectornorm}[1]{\left|\left|#1\right|\right|}
+% \newcommand{\argmin}[1]{\underset{#1}{\operatorname{argmin}}}
+% \newcommand{\argmax}[1]{\underset{#1}{\operatorname{argmax}}}
+
+% Commands for time and frequency integrals over infinty, cos and sin.
+\newcommand{\tint}{\int_{t=-\infty}^\infty}
+\newcommand{\fint}{\int_{\omega=-\infty}^\infty}
+\newcommand{\tauint}{\int_{\tau=0}^\infty}
+\newcommand{\tausum}{\sum_{\tau=0}^\infty}
 \newcommand{\w}{\omega}
-\newcommand{\vsp}{(\mathbb{Y},||\cdot||)}
-\newcommand{\pij}{\mathbb{P}_{i,j}}
-\newcommand{\pji}{\mathbb{P}_{j,i}}
-\newcommand{\pxj}{\mathbb{P}_{x,j}}
-\newcommand{\sumi}{\sum_{i=1}^\infty}
-\newcommand{\mc}{(\mathbb{X},\mathbb{P})}
+\newcommand{\wo}{\omega_0}
+\newcommand{\ejwt}{e^{j\omega\@t}}
+\newcommand{\emjwt}{e^{-j\omega\@t}}
+\newcommand{\dt}{\Delta_T}
 \newcommand{\vp}{\varphi}
-\newcommand{\calg}{\mathcal{G}}
-\newcommand{\uinu}{u\in\mathcal{U}}
-\newcommand{\xinx}{x\in\mathbb{X}}
-\newcommand{\muinm}{\mu\in\mathcal{M}}
-\newcommand{\cale}{\mathcal{E}}
-\newcommand{\jinxe}{j\in\mathbb{X}\backslash\mathcal{E}}
-\newcommand{\jine}{j\in\mathcal{E}}
-\newcommand{\xnote}{\mathbb{X}\backslash\mathcal{E}}
-\newcommand{\lT}{L_2[0,T]}
-\newcommand{\nw}{\nabla_xW}
-\newcommand{\xij}{x_{i,j}}
+\newcommand{\fN}{\frac{1}{N}}
+\newcommand{\sumt}{\sum_{t=1}^N}
+\newcommand{\sumk}{\sum_{k=0}^N}
+\newcommand{\ruhat}{\hat{R}_u^N (\tau)}
+\newcommand{\ryuhat}{\hat{R}_{yu}^N (\tau)}
+\newcommand{\phiuhat}{\hat{\Phi}_u^N (\omega)}
+\newcommand{\phiyuhat}{\hat{\Phi}_{yu}^N (\omega)}
+\newcommand{\phiyuhh}{\hat{\hat{\Phi}}_{yu}^N (\omega)}
+\newcommand{\phiuhh}{\hat{\hat{\Phi}}_u^N (\omega)}
+\newcommand{\phiyhh}{\hat{\hat{\Phi}}_y^N (\omega)}
+\newcommand{\ghh}{\hat{\hat{G}} (e^{j\omega})}
+\newcommand{\thn}{\hat{\theta}_{LS}^N}
+\newcommand{\thiv}{\hat{\theta}_{IV}^N}
+\newcommand{\thetan}{\hat{\theta}^N}
+\newcommand{\btheta}{\bar{\theta}}
+\newcommand{\tast}{\theta^\ast}
+\newcommand{\ejw}{(e^{j\omega})}
+\newcommand{\onen}{\frac{1}{N}}
+\newcommand{\tonen}{\tfrac{1}{N}}
+\newcommand{\ptheta}{\frac{\partial}{\partial\theta}}
+\newcommand{\solth}{\text{sol}_\theta}
+\newcommand{\cov}{\text{cov}}
+\newcommand{\var}{\text{var}}
+\newcommand{\T}{\theta}
+\newcommand{\eps}{\epsilon}
+\newcommand{\ett}{\epsilon(t,\theta)}
+\newcommand{\est}{\epsilon^2(t,\theta)}
+\newcommand{\go}{G_0(q)}
+\newcommand{\gt}{G_\theta(q)}
+\newcommand{\ho}{H_0(q)}
+\newcommand{\hth}{H_\theta(q)}
+\newcommand{\hit}{H_\theta^{-1} (q)}
+\def\argmin{\mathop{\arg\,\min}\limits}
+\def\argmax{\mathop{\arg\,\max}\limits}
+\def\argsol{\mathop{\arg\,\text{sol}}\limits}
+\def\sign{\mathop{\text{sign}}\limits}
+\def\ent{\mathop{\text{ent}}\limits}
