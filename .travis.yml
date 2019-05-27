@@ -18,4 +18,4 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - mkdir statick_output; statick . statick_output --user-paths statick_config --profile tex-profile.yaml
+  - mkdir statick_output; statick . statick_output --user-paths statick_config --profile tex-profile.yaml --config tex-config.yaml
