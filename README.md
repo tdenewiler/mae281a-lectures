@@ -27,6 +27,5 @@ To run Statick locally, do the following:
 ```shell
 apt install chktex lacheck
 pip install -r requirements.txt
-mkdir statick_output
-statick . statick_output --user-paths statick_config --profile tex-profile.yaml --config tex-config.yaml
+statick . --user-paths statick_config --profile tex-profile.yaml --config tex-config.yaml
 ```
