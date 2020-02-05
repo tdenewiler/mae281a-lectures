@@ -34,7 +34,7 @@ class CustomPlotter():
         plt.axis('equal')
         plt.xlabel(r'$x$')
         plt.ylabel(r'$f(x)$')
-        plt.title(r'$f(x)=\sqrt{3}{x}$')
+        plt.title(r'$f(x)=\sqrt[3]{x}$')
 
         if self.saveplots:
             plt.savefig("../images/plotCubeRootX.svg")

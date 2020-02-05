@@ -9,3 +9,7 @@ global:
         regex: "Could not open .+"
       - tools: [lacheck]
         regex: "Old style class defined"
+      - tools: [lacheck]
+        regex: "Dots should be ellipsis.+"
+      - tools: [lacheck]
+        regex: ".+see C.10.2"
