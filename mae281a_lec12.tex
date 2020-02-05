@@ -17,7 +17,11 @@
 \section{Linearization}
 \begin{theorem}
 Consider $\dot{x}=f(x)$ with $f(0)=0$ and let
-$$A = \frac{\partial f(0)}{\partial x}.$$
+
+\begin{equation*}
+A = \frac{\partial f(0)}{\partial x}.
+\end{equation*}
+
 \begin{enumerate}
 \item $x=0$ is asymptotically stable if $A$ is Hurwitz.
 \item $x=0$ is unstable if there exists $\lambda_i(A)$ such that $\text{Re}(\lambda_i) > 0$.
@@ -55,12 +59,20 @@ Nonlinear analysis is necessary to determine stability of these systems.
 
 \section{Linear Time Variant Systems and Linearization}
 The system $\dot{x}(t) = A(t)x(t)$ can also be written as
-$$x(t) = \Phi(t,t_0)x(t_0)$$
+
+\begin{equation*}
+x(t) = \Phi(t,t_0)x(t_0)
+\end{equation*}
+
 where $\Phi$ is the state transition matrix.
 
 \begin{definition}
 The equilibrium point $x=0$ is \textit{exponentially stable} if
-$$|\Phi(t,t_0)| \leq Ke^{-\gamma(t-t_0)} \forall t\geq t_0$$
+
+\begin{equation*}
+|\Phi(t,t_0)| \leq Ke^{-\gamma(t-t_0)} \forall t\geq t_0
+\end{equation*}
+
 with $K>0$ because as an upper bound and $\gamma>0$ because we are looking for stable systems.
 \end{definition}
 
@@ -73,11 +85,19 @@ The main point to take away from this is that we cannot determine stability by a
 
 \begin{example}
 Let the system be
-$$A(t) = \left[\begin{array}{c c} -1+1.5\cos^2t & 1-1.5\sin t\cos t \\ -1-1.5\sin t\cos t & -1+1.5\sin^2t \end{array}\right].$$
+
+\begin{equation*}
+A(t) = \left[\begin{array}{c c} -1+1.5\cos^2t & 1-1.5\sin t\cos t \\ -1-1.5\sin t\cos t & -1+1.5\sin^2t \end{array}\right].
+\end{equation*}
+
 The eigenvalues are $\lambda(A (t)) = \{-0.25\pm{} 0.25\sqrt{7}j\}$.
 These eigenvalues are stable and constant.
 However, the system written as
-$$\Phi(t,0) = \left[\begin{array}{c c} e^{0.5t}\cos t & e^{-t}\sin t \\ -e^{0.5t}\sin t & e^{-t}\cos t \end{array}\right]$$
+
+\begin{equation*}
+\Phi(t,0) = \left[\begin{array}{c c} e^{0.5t}\cos t & e^{-t}\sin t \\ -e^{0.5t}\sin t & e^{-t}\cos t \end{array}\right]
+\end{equation*}
+
 is not stable.
 
 It turns out that the eigenvalues are the average.
@@ -95,7 +115,11 @@ V &= x^T P(t)x
 \end{theorem}
 
 \begin{theorem}
-$$A(t) = \left.\frac{\partial f(t,x)}{\partial x}\right|_{x=0}$$
+
+\begin{equation*}
+A(t) = \left.\frac{\partial f(t,x)}{\partial x}\right|_{x=0}
+\end{equation*}
+
 \end{theorem}
 
 \section{Perturbation Method}
@@ -106,7 +130,11 @@ For the system given by
 \dot{x} = f(t,x,\epsilon), \qquad x(t_0) = \eta(\epsilon)
 \end{align}
 we can denote by $x_0(t)$ the solution of
-$$\dot{x} = f(t,x,0), \qquad x(t_0) = \eta(0).$$
+
+\begin{equation*}
+\dot{x} = f(t,x,0), \qquad x(t_0) = \eta(0).
+\end{equation*}
+
 Then we can take a Taylor series expansion in $\epsilon$ only because time is not small.
 This leads to
 \begin{align}

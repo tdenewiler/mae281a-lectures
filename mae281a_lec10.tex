@@ -19,7 +19,11 @@ To obtain global asymptotic stability it is not enough for the Lyapunov function
 
 \begin{example}
 Let the Lyapunov function be
-$$V = \frac{x_1^2}{1+x_1^2} + x_2^2.$$
+
+\begin{equation*}
+V = \frac{x_1^2}{1+x_1^2} + x_2^2.
+\end{equation*}
+
 This function is positive definite.
 Notice that the first term is bounded but not the second term.
 This leads to level sets that look like those in Figure~\ref{fig:10levelSets}.
@@ -30,7 +34,7 @@ $\lozenge$
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.4\textwidth]{images/10levelSets}
-\caption{Level sets.}
+\caption{Level sets.}%
 \label{fig:10levelSets}
 \end{figure}
 
@@ -51,19 +55,33 @@ Let the system be defined by
 \dot{x}_2 &= -x_1 - x_2.
 \end{align*}
 Try the Lyapunov function
-$$V = \frac{x_1^2}{2} + \frac{x_2^2}{4}.$$
+
+\begin{equation*}
+V = \frac{x_1^2}{2} + \frac{x_2^2}{4}.
+\end{equation*}
+
 Taking the derivative yields
-$$\dot{V} = -x_1^2 - x_2^2$$
+
+\begin{equation*}
+\dot{V} = -x_1^2 - x_2^2
+\end{equation*}
+
 which is negative definite and implies that the equilibrium point $x=0$ has global asymptotic stability.
 $\lozenge$
 \end{example}
 
 \section{Completion of Squares}
 In general completion of squares is given by
-$$a^T b \leq \tfrac{1}{2}|a|^2 + \tfrac{1}{2}|b|^2$$
+
+\begin{equation*}
+a^T b \leq \tfrac{1}{2}|a|^2 + \tfrac{1}{2}|b|^2
+\end{equation*}
 
 In the scalar case we have
-$${(a-b)}^2 = a^2 - 2ab + b^2 \geq 0.$$
+
+\begin{equation*}
+{(a-b)}^2 = a^2 - 2ab + b^2 \geq 0.
+\end{equation*}
 
 \begin{example}
 Let the system be
@@ -72,11 +90,23 @@ Let the system be
 \dot{x}_2 &= -x_2.
 \end{align*}
 Let the Lyapunov function be
-$$V = \frac{x_1^2+x_2^2}{2}.$$
+
+\begin{equation*}
+V = \frac{x_1^2+x_2^2}{2}.
+\end{equation*}
+
 Then the derivative is
-$$\dot{V} = x_1\dot{x}_1 + x_2\dot{x}_2 = -x_1^2 - x_2^2 + x_1x_2.$$
+
+\begin{equation*}
+\dot{V} = x_1\dot{x}_1 + x_2\dot{x}_2 = -x_1^2 - x_2^2 + x_1x_2.
+\end{equation*}
+
 By completion of squares this leads to
-$$x_1x_2 \leq \tfrac{1}{2}x_1^2 + \tfrac{1}{2}x_2^2$$
+
+\begin{equation*}
+x_1x_2 \leq \tfrac{1}{2}x_1^2 + \tfrac{1}{2}x_2^2
+\end{equation*}
+
 which implies that $\dot{V} \leq V$.
 Since $V \geq 0$ this means that $\dot{V} \leq 0$.
 $\lozenge$
@@ -91,11 +121,11 @@ $\lozenge$
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.4\textwidth]{images/10instability}
-\caption{Unstable second order systems.}
+\caption{Unstable second order systems.}%
 \label{fig:10instability}
 \end{figure}
 
-\begin{theorem}
+\begin{theorem}%
 \label{th:instability}
 Let $x=0$ be an equilibrium point of $\dot{x}=f(t,x)$.
 Let $V:\mathcal{D}\to\mathbb{R}$, $V\in\mathcal{C}^1$, $V(0)=0$ and $V(x_0)>0$ for some arbitrarirly small $|x_0|$.
@@ -111,7 +141,7 @@ A system is considered unstable when escape routes exist for some of the traject
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.4\textwidth]{images/10theoremBall}
-\caption{Instability theory.}
+\caption{Instability theory.}%
 \label{fig:10theoremBall}
 \end{figure}
 
@@ -134,7 +164,7 @@ $\lozenge$
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.4\textwidth]{images/10unstableV}
-\caption{Instability regions.}
+\caption{Instability regions.}%
 \label{fig:10unstableV}
 \end{figure}
 
@@ -155,12 +185,24 @@ We can see that $\dot{V} = 0$ on the $y$-axis.
 
 For the second attempt let $W=x^2-4y^2$ since the quadratic term $|x|x$ is the likely place for instabilities to occur because the cross terms are not anti-dissipative.
 This leads to
-$$\mathcal{U} = \{|x|>2|y|\}$$
+
+\begin{equation*}
+\mathcal{U} = \{|x|>2|y|\}
+\end{equation*}
+
 and the derivative of $W$ is
-$$\dot{W} = 2|x|^3 + 2(1+|x|)yx^2 + (1+|x|)yx^2.$$
+
+\begin{equation*}
+\dot{W} = 2|x|^3 + 2(1+|x|)yx^2 + (1+|x|)yx^2.
+\end{equation*}
+
 Then we can look at the intersection of $\mathcal{U}$ with a circle of radius $\tfrac{1}{12}$ as in Figure~\ref{fig:10unstableW} and see that
-$$\dot{W} \geq \tfrac{1}{4}|x|^3 + \tfrac{3}{2}\underbrace{(|x|-2|y|)}_{>0\text{\ on\ }\mathcal{U}} + \tfrac{1}{4}|x|^3
-  \underbrace{(1-12\sqrt{x^2+y^2})}_{>0\text{\ on\ }\mathcal{B}_{1/12}}.$$
+
+\begin{equation*}
+\dot{W} \geq \tfrac{1}{4}|x|^3 + \tfrac{3}{2}\underbrace{(|x|-2|y|)}_{>0\text{\ on\ }\mathcal{U}} + \tfrac{1}{4}|x|^3
+\underbrace{(1-12\sqrt{x^2+y^2})}_{>0\text{\ on\ }\mathcal{B}_{1/12}}.
+\end{equation*}
+
 This shows that $\dot{W}>0$ on $\mathcal{U}\cap\mathcal{B}_{1/12}$ and leads to the conclusion that $x=y=0$ is unstable.
 $\lozenge$
 \end{example}
@@ -168,6 +210,6 @@ $\lozenge$
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.4\textwidth]{images/10unstableW}
-\caption{Intersection of instability regions.}
+\caption{Intersection of instability regions.}%
 \label{fig:10unstableW}
 \end{figure}

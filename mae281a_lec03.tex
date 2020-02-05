@@ -35,13 +35,21 @@ When $k=1$ the trajectories are parallel with the eigenvector near $t=0$.
 Multiplicity of the eigenvalues can occur and the exponential describing the system response can contain polynomials such as $e^{t^2}$ and $e^{t^3}$.
 
 \section{Examples of Behavior Near Equilibria}
-\begin{example}
+\begin{example}%
 \label{ex:03pendulum}
 This is Example 2.4 in Khalil and looks at a pendulum with friction.
 We can use Newton's second law to find the dynamics as
-$$ml\ddot{\theta} + kl\dot{\theta} + mg\sin\theta = 0$$
+
+\begin{equation*}
+ml\ddot{\theta} + kl\dot{\theta} + mg\sin\theta = 0
+\end{equation*}
+
 The state space variables are angular position and angular velocity, see Figure~\ref{fig:03pendulum}, where
-$$ x_1 = \theta, \qquad x_2 = \dot{\theta}$$
+
+\begin{equation*}
+x_1 = \theta, \qquad x_2 = \dot{\theta}
+\end{equation*}
+
 This leads to
 \begin{align*}
 \dot{x}_1 &= x_2 \\
@@ -49,17 +57,37 @@ This leads to
 \end{align*}
 The steps involved in analyzing the system behavior are to find the equilibria, compute the Jacobian and then plot the behavior.
 The equilibria are at
-$$x^{(1)} = \left[\begin{array}{c} 0 \\ 0 \end{array}\right], \qquad x^{(2)} = \left[\begin{array}{c} \pi \\ 0 \end{array}\right]$$
+
+\begin{equation*}
+x^{(1)} = \left[\begin{array}{c} 0 \\ 0 \end{array}\right], \qquad x^{(2)} = \left[\begin{array}{c} \pi \\ 0 \end{array}\right]
+\end{equation*}
+
 At both equilibria the velocity is zero but the angle differs.
 The Jacobian can be computed as
-$$\frac{\partial{} f}{\partial{} x} = \left[\begin{array}{c c} 0 & 1 \\ -\tfrac{g}{l}\cos x_1 & -\tfrac{k}{m} \end{array}\right]$$
+
+\begin{equation*}
+\frac{\partial{} f}{\partial{} x} = \left[\begin{array}{c c} 0 & 1 \\ -\tfrac{g}{l}\cos x_1 & -\tfrac{k}{m} \end{array}\right]
+\end{equation*}
+
 with
-$$A_1 = \left[\begin{array}{c c} 0 & 1 \\ -\tfrac{g}{l} & -\tfrac{k}{m} \end{array}\right], \qquad A_2 = \left[\begin{array}{c c} 0 & 1 \\ \tfrac{g}{l} & -\tfrac{k}{m} \end{array}\right]$$
+
+\begin{equation*}
+A_1 = \left[\begin{array}{c c} 0 & 1 \\ -\tfrac{g}{l} & -\tfrac{k}{m} \end{array}\right], \qquad A_2 = \left[\begin{array}{c c} 0 & 1 \\ \tfrac{g}{l} & -\tfrac{k}{m} \end{array}\right]
+\end{equation*}
+
 If we let $l=g$, $k=\tfrac{m}{2}$ this leads to a constant $A_1$ and $A_2$.
 Then the eigenvalues for $A_1$ are
-$$\lambda_{1,2} = -0.25\pm{} j0.97$$
+
+\begin{equation*}
+\lambda_{1,2} = -0.25\pm{} j0.97
+\end{equation*}
+
 and for $A_2$ they are
-$$\lambda_1 = -1.28, \qquad \lambda_2 = 0.78$$
+
+\begin{equation*}
+\lambda_1 = -1.28, \qquad \lambda_2 = 0.78
+\end{equation*}
+
 From our previous analysis this means that $A_1$ is a stable focus and $A_2$ is a saddle point.
 Next we look at the eigenvectors to determine orientation.
 With the left point corresponding to $x^{(1)}$ and the right point to $x^{(2)}$ we can see the phase portrait in Figure~\ref{fig:03multeq}.
@@ -77,21 +105,21 @@ $\lozenge$
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.5\textwidth]{images/03pendulum}
-\caption{Pendulum.}
+\caption{Pendulum.}%
 \label{fig:03pendulum}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.7\textwidth]{images/03multeq}
-\caption{Local equlibria behavior.}
+\caption{Local equlibria behavior.}%
 \label{fig:03multeq}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.7\textwidth]{images/03globaleq}
-\caption{Global equlibria behavior.}
+\caption{Global equlibria behavior.}%
 \label{fig:03globaleq}
 \end{figure}
 
@@ -112,7 +140,11 @@ The position decreases for $\mu>0$ at a cubic rate resulting in a spiral traject
 
 For systems with polynomial right hand side expressions we can just ignore any terms with order $n>1$ when trying to determine the Jacobian because the Taylor series expansion will ignore them.
 We get
-$$A = \left[\begin{array}{c c} 0 & -1 \\ 1 & 0 \end{array}\right]$$
+
+\begin{equation*}
+A = \left[\begin{array}{c c} 0 & -1 \\ 1 & 0 \end{array}\right]
+\end{equation*}
+
 This would yield a circle.
 However, the nonlinear analysis shows that this is wrong and the linearization has caused this error due to the fact that $\text{Re} (\lambda_i) = 0$.
 Note that $\text{Re} (\lambda_{1,2}) = 0$.
@@ -120,15 +152,18 @@ $\lozenge$
 \end{example}
 
 \begin{figure}[ht!]
-	\centering
-	\includegraphics[width=.5\textwidth]{images/03cubic}
-	\caption{Spiral trajectory.}
-	\label{fig:03cubic}
+\centering
+\includegraphics[width=.5\textwidth]{images/03cubic}
+\caption{Spiral trajectory.}%
+\label{fig:03cubic}
 \end{figure}
 
 \section{Fundamental Properties of Nonlinear Systems}
 This is Chapter 3 of Khalil and involves studying the \textit{existence} and \textit{uniqueness} of solutions of systems of the form
-$$\dot{x} = f (t,x), \qquad x (t_0) = x_0$$
+
+\begin{equation*}
+\dot{x} = f (t,x), \qquad x (t_0) = x_0
+\end{equation*}
 
 \begin{example}
 This is a system where a solution does not exist.

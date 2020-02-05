@@ -19,14 +19,22 @@ Invariance concerns a function, $\dot{x}=f(x)$, converging to a set and then sta
 
 \begin{example}
 Using the dynamics of a pendulum previously described in Example~\ref{ex:03pendulum} consider the Lyapunov function with derivative
-$$\dot{V} = \frac{d}{dt}\left\{\frac{g}{l}\left(1-\cos x_1\right) + \frac{1}{2}x_2^2\right\} = -\frac{k}{m}x_2^2$$
+
+\begin{equation*}
+\dot{V} = \frac{d}{dt}\left\{\frac{g}{l}\left(1-\cos x_1\right) + \frac{1}{2}x_2^2\right\} = -\frac{k}{m}x_2^2
+\end{equation*}
+
 which is negative semidefinite.
 This does not result in asymptotic stability because of the negative semidefinite character of the derivative.
 However, we do get $\dot{V}=0$ on $x_2=0$.
 
 Suppose that $x_2(t)\triangleq0$.
 This would lead to
-$$\dot{x}_2 = -\frac{g}{l}\sin x_1 - \frac{k}{m}x_2 \Rightarrow \sin x_1(t) \triangleq 0.$$
+
+\begin{equation*}
+\dot{x}_2 = -\frac{g}{l}\sin x_1 - \frac{k}{m}x_2 \Rightarrow \sin x_1(t) \triangleq 0.
+\end{equation*}
+
 Thus $\dot{V}$ can be maintained only at the origin and $x(t)\to0$.
 $\lozenge$
 \end{example}
@@ -83,7 +91,11 @@ V &= \tfrac{1}{2}(x^2+y^2+z^2) \\
 Again we have that the equilibrium set is $\mathcal{E}=\{x=0\}$.
 The equilibria are located at $x=0$ and $y=0$ or $y=1$.
 This gives
-$$\mathcal{M} = \{x=0,y=0\} \cup \{x=0,y=1\}.$$
+
+\begin{equation*}
+\mathcal{M} = \{x=0,y=0\} \cup \{x=0,y=1\}.
+\end{equation*}
+
 $\lozenge$
 \end{example}
 
@@ -114,6 +126,10 @@ The system matrix $A$ is Hurwitz if and only if $\forall Q=Q^T>0\exists$ a uniqu
 
 \begin{proof}
 Let
-$$P=\int_0^\infty e^{A^T t}Qe^{At}dt.$$
+
+\begin{equation*}
+P=\int_0^\infty e^{A^T t}Qe^{At}dt.
+\end{equation*}
+
 The other direction of the if and only if follows trivially from the Lyapunov function in (\ref{eq:10linearLyapDeriv}).
 \end{proof}

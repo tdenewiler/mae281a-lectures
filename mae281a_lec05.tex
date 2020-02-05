@@ -17,18 +17,26 @@
 \section{Continuity}
 This lecture is focused on continuity as found in Chapter 3 of Khalil.
 
-\begin{theorem}
+\begin{theorem}%
 \label{th:05lip}
 Consider $\dot{x} = f(t,x)$.
 Let $f(t,x)$ be piecewise continuous in $t$ and Lipschitz in $x$ such that
-$$|f(t,x) - f(t,y)| \leq L|x-y|,~\forall x,y\in\mathcal{B} = \{x\in\mathbb{R}^n~|~|x-x_0|\leq r\},~\forall t\in[t_0,t_1]$$
+
+\begin{equation*}
+|f(t,x) - f(t,y)| \leq L|x-y|,~\forall x,y\in\mathcal{B} = \{x\in\mathbb{R}^n~|~|x-x_0|\leq r\},~\forall t\in[t_0,t_1]
+\end{equation*}
+
 where $L>0$ is a constant.
 Then there exists $\delta>0$ such that the system has a unqiue solution over $[t_0,t_0+\delta]$ with $t_0+\delta\leq t_1$.
 \end{theorem}
 
 The important condition is the Lipschitz inequality.
 Note that
-$$\mathcal{C}^0 \Leftarrow \text{Lipshcitz} \Leftarrow \mathcal{C}^1$$
+
+\begin{equation*}
+\mathcal{C}^0 \Leftarrow \text{Lipshcitz} \Leftarrow \mathcal{C}^1
+\end{equation*}
+
 where $\mathcal{C}^0$ means a function is continuous and $\mathcal{C}^1$ means a function is differentiable and smooth.
 This theorem is really saying that for some finite, positive amount of time, $t_0+\delta$, the system will not blow up.
 Also, note that $\delta\sim\frac{1}{L}$.
@@ -46,7 +54,7 @@ $\lozenge$
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.7\textwidth]{images/05lip}
-\caption{Two functions that are Lipschitz with $L=1$.}
+\caption{Two functions that are Lipschitz with $L=1$.}%
 \label{fig:05lip}
 \end{figure}
 
@@ -60,18 +68,26 @@ $\lozenge$
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.5\textwidth]{images/plotSqrtX}
-\caption{The function $f(x) = \sqrt{x}$ is not Lipschitz.}
+\caption{The function $f(x) = \sqrt{x}$ is not Lipschitz.}%
 \label{fig:05notlip}
 \end{figure}
 
 \begin{definition}
 The \textit{Euclidean norm} of a matrix is given as
-$$|P| = \sqrt{\lambda_{\text{max}}(P^T P)}$$
+
+\begin{equation*}
+|P| = \sqrt{\lambda_{\text{max}}(P^T P)}
+\end{equation*}
+
 \end{definition}
 
 \begin{lemma}
 If
-$$\left|\frac{\partial f}{\partial x}(t,x)\right| \leq L$$
+
+\begin{equation*}
+\left|\frac{\partial f}{\partial x}(t,x)\right| \leq L
+\end{equation*}
+
 it follows that the function $f$ is Lipschitz with $L$.
 \end{lemma}
 For terminology we can interchange Lipschitz, Lipschitz continuous and locally Lipschitz.
@@ -93,7 +109,11 @@ All linear, time varying (or time invariant) systems, even unstable ones, are gl
 \begin{example}
 This is Example 3.4 in Khalil.
 Consider
-$$\dot{x} = (1+t^2\sin(t))x + t^3\cos(t)$$
+
+\begin{equation*}
+\dot{x} = (1+t^2\sin(t))x + t^3\cos(t)
+\end{equation*}
+
 The right hand side is globally Lipschitz and $L$ grows with time.
 $\lozenge$
 \end{example}
@@ -104,7 +124,11 @@ We will try to clear up this inconsitency later.
 \begin{example}
 This is Example 3.5 in Khalil.
 Consider
-$$\dot{x} = -x^3 \Rightarrow x(t) = \frac{x_0}{\sqrt{1+2x_0^2t}}$$
+
+\begin{equation*}
+\dot{x} = -x^3 \Rightarrow x(t) = \frac{x_0}{\sqrt{1+2x_0^2t}}
+\end{equation*}
+
 This function is locally but not globally Lipschitz.
 $\lozenge$
 \end{example}
@@ -125,7 +149,11 @@ Note that this concept is just a theoretical construct to show that the Theorem~
 
 \begin{example}
 Consider
-$$\dot{x} = x^3 \Rightarrow x(t) = \frac{x_0}{\sqrt{1-2x_0^2t}}$$
+
+\begin{equation*}
+\dot{x} = x^3 \Rightarrow x(t) = \frac{x_0}{\sqrt{1-2x_0^2t}}
+\end{equation*}
+
 The maximal interval of existence is $t=[0,\frac{1}{2x_0^2})$.% chktex 9
 $\lozenge$
 \end{example}
@@ -135,7 +163,7 @@ If a function $f$ is globally Lipschitz in $x$ then $\dot{x}=f(t,x)$ has a uniqu
 \end{theorem}
 
 Theorem~\ref{th:05lipbound} is a crucial theorem to understand for the remainder of this course.
-\begin{theorem}
+\begin{theorem}%
 \label{th:05lipbound}
 Let the function $f$ be Lipschitz.
 Suppose it is also known that every solution of $\dot{x}=f(t,x)$ is bounded.

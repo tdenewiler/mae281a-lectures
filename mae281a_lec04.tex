@@ -16,11 +16,18 @@
 
 \section{Recap}
 This corresponds to Chapter 3 of Khalil and is concerned with the \textit{existence} and \textit{uniqueness} of solutions to nonlinear systems of the form
-$$\dot{x} = f(t,x)$$
+
+\begin{equation*}
+\dot{x} = f(t,x)
+\end{equation*}
 
 \begin{example}
 Consider
-$$\dot{x} = -x + x^3$$
+
+\begin{equation*}
+\dot{x} = -x + x^3
+\end{equation*}
+
 Then we have that $|x(t)|\to\infty$ as $t\to\tfrac{1}{2}\text{ln}\frac{x_0^2}{x_0^2-1}$ if $|x_0|>1$ as seen in Figure~\ref{fig:04nonexist}.
 Recall from \S\ref{sec:01fet} that growth greater than linear can cause the non-existence of solutions.
 $\lozenge$
@@ -29,7 +36,7 @@ $\lozenge$
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.5\textwidth]{images/04nonexist}
-\caption{System with non-existence of solution.}
+\caption{System with non-existence of solution.}%
 \label{fig:04nonexist}
 \end{figure}
 
@@ -38,11 +45,23 @@ Uniqueness occurs when, from an initial condition, there is only a single trajec
 
 \begin{example}
 To see a system that has a non-unique solution consider
-$$\dot{x} = \sqrt[3]{x}$$
+
+\begin{equation*}
+\dot{x} = \sqrt[3]{x}
+\end{equation*}
+
 This leads to
-$$\frac{dx}{\sqrt[3]{x}} = dt \Rightarrow \tfrac{3}{2}\left(x{(t)}^{2/3}-x_0^{2/3}\right) = t$$
+
+\begin{equation*}
+\frac{dx}{\sqrt[3]{x}} = dt \Rightarrow \tfrac{3}{2}\left(x{(t)}^{2/3}-x_0^{2/3}\right) = t
+\end{equation*}
+
 If $x_0\neq0$ then
-$$x(t) = \text{sgn}(x_0){\left(x_0^{2/3}+\tfrac{2}{3}t\right)}^{3/2}$$
+
+\begin{equation*}
+x(t) = \text{sgn}(x_0){\left(x_0^{2/3}+\tfrac{2}{3}t\right)}^{3/2}
+\end{equation*}
+
 This grows to the power of $\frac{3}{2}$ which is not quite quadratic.
 If $x_0=0$ then we get multiple valid solutions including
 \begin{align*}
@@ -51,7 +70,11 @@ x(t) &= \pm{(\tfrac{2}{3}t)}^{3/2}
 \end{align*}
 There are even more valid solutions.
 For these cases we have
-$$x(t) = \begin{cases} 0, & t\in[0,T]~\forall T\in[0,\infty] \\ \pm{(\tfrac{2}{3}(t-T))}^{3/2}, & t\geq T \end{cases}$$
+
+\begin{equation*}
+x(t) = \begin{cases} 0, & t\in[0,T]~\forall T\in[0,\infty] \\ \pm{(\tfrac{2}{3}(t-T))}^{3/2}, & t\geq T \end{cases}
+\end{equation*}
+
 The resulting trajectories can be seen in Figure~\ref{fig:04multsols}.
 The slope is infinite at the origin so $\sqrt[3]{x}$ is not differentiable at the origin as seen in Figure~\ref{fig:04infslope}.
 This leads to non-uniqueness of the solution.
@@ -61,14 +84,14 @@ $\lozenge$
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.5\textwidth]{images/04multsols}
-\caption{System with non-uniqueness of solution.}
+\caption{System with non-uniqueness of solution.}%
 \label{fig:04multsols}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.5\textwidth]{images/plotCubeRootX}
-\caption{Plot of $f(x) = \sqrt[3]{x}$.}
+\caption{Plot of $f(x) = \sqrt[3]{x}$.}%
 \label{fig:04infslope}
 \end{figure}
 
@@ -77,7 +100,11 @@ Continuity deals with the $\mathcal{C}^0$ space.
 
 \begin{definition}
 A function $f(x)$ is \textit{continuous} at a point $x$ if $\forall \epsilon \exists \delta$ s.t.
-$$|x-y|<\delta \Rightarrow |f(x)-f(y)|<\epsilon$$
+
+\begin{equation*}
+|x-y|<\delta \Rightarrow |f(x)-f(y)|<\epsilon
+\end{equation*}
+
 \end{definition}
 Note that Khalil uses the notation $||\cdot||$ while this course uses $|\cdot|$ to denote a Euclidean norm.
 Many mathematicians save the notation $||\cdot||$ for non-Euclidean spaces such as Banach, $L_2$, $L_\infty$, etc.
@@ -93,19 +120,35 @@ A function $f:\mathbb{R}^n\to\mathbb{R}^n$ is \textit{continuously differentiabl
 
 \begin{definition}
 If $f:\mathbb{R}^n\to\mathbb{R}$ then the \textit{derivative} of $f$ is
-$$\frac{\partial f}{\partial x} = \left[\begin{array}{c c c} \frac{\partial f}{\partial x_1} & \cdots & \frac{\partial f}{\partial x_n} \end{array}\right]$$
+
+\begin{equation*}
+\frac{\partial f}{\partial x} = \left[\begin{array}{c c c} \frac{\partial f}{\partial x_1} & \cdots & \frac{\partial f}{\partial x_n} \end{array}\right]
+\end{equation*}
+
 \end{definition}
 
 \begin{definition}
 The \textit{gradient} of a function $f$ is
-$$\nabla{} f (x) = \left(\frac{\partial{} f}{\partial{} x}\right)^T$$
+
+\begin{equation*}
+\nabla{} f (x) = \left(\frac{\partial{} f}{\partial{} x}\right)^T% chktex 3
+\end{equation*}
+
 \end{definition}
 
 \begin{theorem}
 The Mean Value Theorem is for a function $f:\mathbb{R}^n\to\mathbb{R}$ with a line segment given by
-$$L (x,y) = \{\mathcal{Z}~|~\mathcal{Z} = \theta{} x + (1-\theta) y, 0<\theta<1\}$$
+
+\begin{equation*}
+L (x,y) = \{\mathcal{Z}~|~\mathcal{Z} = \theta{} x + (1-\theta) y, 0<\theta<1\}
+\end{equation*}
+
 Then there exists $z\in{} L (x,y)$ such that
-$$f (y)-f (x) = \left.\frac{\partial{} f}{\partial{} x}\right|_{x=z} (y-x)$$
+
+\begin{equation*}
+f (y)-f (x) = \left.\frac{\partial{} f}{\partial{} x}\right|_{x=z} (y-x)
+\end{equation*}
+
 \end{theorem}
 This is similar to a Taylor series expansion.
 However, it is an exact form but the derivative is evaluated not at $x=x$ but at $x=z$.
@@ -113,7 +156,11 @@ The theorem does not say what $z$ is other than $z\in[x,y]$.
 
 \begin{example}
 Let $f (x) = x^2$, then
-$$f (y)-f (x) = y^2-x^2 = (y+x) (y-x)$$
+
+\begin{equation*}
+f (y)-f (x) = y^2-x^2 = (y+x) (y-x)
+\end{equation*}
+
 In this case $z=\frac{x+y}{2}$.
 Note that this comes from
 \begin{align*}
@@ -123,7 +170,7 @@ f^\prime(x) = 2z \Rightarrow z = \frac{x+y}{2}
 $\lozenge$
 \end{example}
 
-\section{Gr\"onwall (-Bellman) Inequality}
+\section{Gr\"onwall (-Bellman) Inequality}%
 \label{sec:04gronwall}
 The proof of this lemma is located in the appendix of Khalil.
 There are three versions of this lemma.
@@ -132,26 +179,46 @@ We can think of the function $y$ as the energy of the system.
 \subsection{Version 1-General}
 \begin{lemma}
 If
-$$y(t) \leq \lambda(t) + \int_a^t\mu(s)y(s)ds$$
+
+\begin{equation*}
+y(t) \leq \lambda(t) + \int_a^t\mu(s)y(s)ds
+\end{equation*}
+
 where $y>0$ and $\mu>0$ then
-$$y(t) \leq \lambda(t) + \int_a^t \lambda(s)\mu(s) e^{\int_s^t\mu(\tau)d\tau}ds$$
+
+\begin{equation*}
+y(t) \leq \lambda(t) + \int_a^t \lambda(s)\mu(s) e^{\int_s^t\mu(\tau)d\tau}ds
+\end{equation*}
+
 \end{lemma}
 Typically $\lambda$ and $\mu$ describe properties of a system such as initial conditions, stiffness, damping, etc.
 
 \begin{proof}
 Define $z(t) = \int_z^t \mu(s)y(s)ds$.
 Then
-$$\dot{z} = \mu z + \mu(y-z)$$
+
+\begin{equation*}
+\dot{z} = \mu z + \mu(y-z)
+\end{equation*}
+
 Now apply the variational constants formula.
 Note that $y-z\leq\lambda$ which leads to
-$$z(t) \leq \int_a^t e^{\int_s^t \mu(\tau)d\tau}\mu(s)\lambda(s)ds$$
+
+\begin{equation*}
+z(t) \leq \int_a^t e^{\int_s^t \mu(\tau)d\tau}\mu(s)\lambda(s)ds
+\end{equation*}
+
 Substitute this in to complete the proof.
 \end{proof}
 
 \subsection{Version 2-Simpler}
 \begin{lemma}
 If $\lambda(t) = \lambda$ is a constant then
-$$y(t) \leq \lambda e^{\int_a^t \mu(\tau)d\tau}$$
+
+\begin{equation*}
+y(t) \leq \lambda e^{\int_a^t \mu(\tau)d\tau}
+\end{equation*}
+
 \end{lemma}
 
 \begin{proof}
@@ -161,5 +228,9 @@ Substitute the constants in and apply integration by parts and perform cancellat
 \subsection{Version 3-Simplest}
 \begin{lemma}
 If $\mu(t) = \mu$ is a constant and $\lambda(t) = \lambda$ is a constant then
-$$y(t) \leq \lambda e^{\mu(t-a)}$$
+
+\begin{equation*}
+y(t) \leq \lambda e^{\mu(t-a)}
+\end{equation*}
+
 \end{lemma}

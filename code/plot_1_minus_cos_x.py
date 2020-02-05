@@ -31,7 +31,6 @@ class CustomPlotter():
     def show_plots(self, x, y, yx0, yx1):
         """Show and save plots."""
         plt.plot(x, y)
-        plt.hold(True)
         plt.plot(x, yx0, 'k', linewidth=0.5)
         plt.plot(x, yx1, 'k', linewidth=0.5)
         plt.axis('equal')

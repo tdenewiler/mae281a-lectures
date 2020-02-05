@@ -12,31 +12,39 @@
 \setcounter{lecture}{1}
 \setcounter{chapter}{1}
 
-\lecture{Limit Cycles}
+\lecture{Limit Cycles}%
 \label{lec:mae281a_lec02}
 
 \section{Limit Cycles Recap}
 Last lecture we studied linear and nonlinear limit cycles.
 An example of a linear limit cycle is a  harmonic oscillator given by
-$$\ddot{x} + x = 0$$
+
+\begin{equation*}
+\ddot{x} + x = 0
+\end{equation*}
+
 and the state space is shown in Figure~\ref{fig:02secondorder}.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=.4\textwidth]{images/01secondorder}
+\includegraphics[width=.4\textwidth]{images/01secondorder}%
 \label{fig:02secondorder}
 \caption{Limit cycle for second order harmonic oscillator.}
 \end{figure}
 
 An example of a nonlinear limit cycle is a Van der Pol oscillator given by
-$$\ddot{x} + (x^2-1)\ddot{x} + x = 0$$
+
+\begin{equation*}
+\ddot{x} + (x^2-1)\ddot{x} + x = 0
+\end{equation*}
+
 and the state space is shown in Figure~\ref{fig:02vdplc}.
 Note that there is positive damping for $|x|>1$ and negative damping for $|x|<1$.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.4\textwidth]{images/02vdplc}
-\caption{Limit cycle for Van der Pol oscillator.}
+\caption{Limit cycle for Van der Pol oscillator.}%
 \label{fig:02vdplc}
 \end{figure}
 
@@ -79,15 +87,24 @@ which yields the equilibria as
 \end{align*}
 
 \section{Qualitative Behavior Near Equilibria}
-This section corresponds to \S2.3 of Khalil. Let
-$$\dot{x} = f(x), \qquad f(p) = 0$$
+This section corresponds to \S2.3 of Khalil.
+Let
+
+\begin{equation*}
+\dot{x} = f(x), \qquad f(p) = 0
+\end{equation*}
+
 so that the point $p$ is an equilibrium.
 We can use a Taylor series expansion about $x=p$ to find
 \begin{align*}
 \dot{x} = \underbrace{f(p)}_{=0} + \underbrace{\left.\frac{\partial f(x)}{\partial x}\right|_{x=p}}_{\text{constant square matrix}} \underbrace{(x-p)}_{y} + \text{H.O.T.}
 \end{align*}
 Let
-$$A \triangleq \left.\frac{\partial f(x)}{\partial x}\right|_{x=p}$$
+
+\begin{equation*}
+A \triangleq \left.\frac{\partial f(x)}{\partial x}\right|_{x=p}
+\end{equation*}
+
 and then the linearization is $\dot{y}=Ay$. Note that
 \begin{align*}
 \frac{\partial f(x)}{\partial x} = \left[\begin{array}{c c c} \frac{\partial f(x_1)}{\partial x_1} & \cdots & \frac{\partial f(x_1)}{\partial x_n} \\ \vdots & \ddots & \vdots \\ \frac{\partial f(x_n)}{\partial x_1} & \cdots & \frac{\partial f(x_n)}{\partial x_n} \end{array}\right]
@@ -97,7 +114,11 @@ For second order systems the state space is the plane spanned by $x_1 = x$ and $
 
 \subsection{Qualitative Behavior of Second-Order Linear Systems}
 For the system
-$$\dot{x} = Ax$$
+
+\begin{equation*}
+\dot{x} = Ax
+\end{equation*}
+
 we have to look at the eigenvalues and eigenvectors of $A$.
 There are three possible Jordan forms of $A$ given as
 \begin{align*}
@@ -120,7 +141,7 @@ Figure~\ref{fig:02stable1} shows the stable mode for $\lambda_1, \lambda_2<0$, F
 \subfloat[$\lambda_1>0,\lambda_2<0$, saddle point.]{%
 \label{fig:02saddle1}\includegraphics[width=0.35\textwidth]{images/02saddle1}
 }
-\caption{Case 1 with $\lambda_1\neq\lambda_2\neq0$.}
+\caption{Case 1 with $\lambda_1\neq\lambda_2\neq0$.}%
 \label{fig:02case1}
 \end{figure}
 
@@ -138,7 +159,7 @@ Figure~\ref{fig:02stable2} shows the stable mode for $\alpha<0$, Figure~\ref{fig
 \subfloat[$\alpha=0$, center point.]{%
 \label{fig:02center2}\includegraphics[width=0.35\textwidth]{images/02center2}
 }
-\caption{Case 2 with $\lambda_{1,2} = \alpha\pm j\beta$.}
+\caption{Case 2 with $\lambda_{1,2} = \alpha\pm j\beta$.}%
 \label{fig:02case2}
 \end{figure}
 
@@ -161,6 +182,6 @@ Figure~\ref{fig:02llone3} shows what happens when $\lambda<0$ and Figure~\ref{fi
 \subfloat[$\lambda>0$, one independent eigenvector.]{%
 \label{fig:02lgone3}\includegraphics[width=0.35\textwidth]{images/02lgone3}
 }
-\caption{Case 3 with $\lambda_1=\lambda_2=\lambda\neq0$.}
+\caption{Case 3 with $\lambda_1=\lambda_2=\lambda\neq0$.}%
 \label{fig:02case3}
 \end{figure}
