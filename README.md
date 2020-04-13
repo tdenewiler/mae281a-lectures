@@ -2,7 +2,7 @@
 
 | Service | Status |
 | ------- | ------ |
-| Linters | ![Unit Tests](https://github.com/tdenewiler/mae283-lectures/workflows/Unit%20Tests/badge.svg) |
+| Linters | ![Unit Tests](https://github.com/tdenewiler/mae281-lectures/workflows/Unit%20Tests/badge.svg) |
 
 This repository contains lecture notes completed for [MAE 281A](http://flyingv.ucsd.edu/krstic/teaching/281a/281a.html)
 at UC San Diego during Fall quarter 2009 and taught by Prof Krstic.
